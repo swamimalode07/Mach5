@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mach5 - Integrated Search and Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF4B26',
+                        dark: '#212121',
+                        'dark-800': '#1A1A1A',
+                        'dark-700': '#262626',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(var(--tw-gradient-stops))',
+                    },
+                    fontFamily: {
+                    grotesk: ['"Space Grotesk"', 'sans-serif'],
+                  },
+                }
+            }
+        }
+    </script>
+     <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
+    </script>
+    <style>
+        .bg-mesh {
+            background-image: 
+                radial-gradient(at 20% 0%, rgba(255, 75, 38, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(255, 75, 38, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(255, 75, 38, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 50%, rgba(255, 75, 38, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(255, 75, 38, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, rgba(255, 75, 38, 0.1) 0px, transparent 50%);
+        }
+        .nav-blur {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+
+        
+    </style>
+</head>
+<body class="bg-[#222222]">
+  <!-- navbar -->
+
+  <section class="bg-[#222222] text-white overflow-x-auto">
+    <nav class="fixed w-full z-50 bg-dark border-none backdrop-blur-sm bg-opacity-70 overflow-x-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <img src="https://imgs.search.brave.com/U8Gh_WPXBSBPpRiVrtuK9QXFM-xkMeNFd7DKOFWO1fQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vcGVu/c2VhcmNoLm9yZy9h/c3NldHMvbWVkaWEv/cGFydG5lcnMvbWFj/aDUvbWFjaDUtbG9n/by5wbmc"
+                 alt="Mach5 Logo" class="w-8 h-8 object-contain" />
+            <span class="text-2xl font-bold tracking-tight">Mach5</span>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">About us</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Platform</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Solutions</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Docs</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Resources</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Pricing</a>
+          </div>
+  
+          <div class="hidden md:block">
+            <button class="bg-orange-600 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-500 transition-all duration-200 shadow-lg shadow-blue-600/20">
+              Get started for free
+            </button>
+          </div>
+  
+          <div class="md:hidden">
+            <button onclick="toggleMenu()" class="text-gray-400 hover:text-white focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+        <div id="mobile-menu" class="md:hidden mt-4 space-y-4 hidden">
+          <a href="#" class="block text-gray-400 hover:text-white text-sm font-medium">About us</a>
+          <a href="#" class="block text-gray-400 hover:text-white text-sm font-medium">Platform</a>
+          <a href="#" class="block text-gray-400 hover:text-white text-sm font-medium">Solutions</a>
+          <a href="#" class="block text-gray-400 hover:text-white text-sm font-medium">Docs</a>
+          <a href="#" class="block text-gray-400 hover:text-white text-sm font-medium">Resources</a>
+          <a href="#" class="block text-gray-400 hover:text-white text-sm font-medium">Pricing</a>
+          <button class="w-full bg-[#FF5C1B] text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200 shadow-md shadow-orange-600/20">
+            Get started for free
+          </button>
+        </div>
+      </div>
+    </nav>
+  </section>
+  
+
+  <section class="bg-[linear-gradient(to_top,_#FF5C1B_30%,_#222222_90%)] py-20">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-10 items-center">
+      
+      <!-- Left: Text Content -->
+      <div class="text-white pt-10">
+        <h2 class="text-6xl md:text-5xl font-bold leading-snug">
+          Revolutionizing <br>
+          <span class="text-[#FF5C1B]">Search <span class="text-white">&</span> Analytics</span><br>
+          for <span class="text-white">Security Teams</span>
+        </h2>
+        <p class="mt-6 text-gray-100 text-sm leading-relaxed max-w-lg">
+            Analysis of event data is critical for security analytics, SIEM, observability, and APM applications, but legacy solutions have forced impossible tradeoffs between performance, scale, and cost. Mach5 Software breaks these constraints with our high-performance search and analytics platform. 
+            Our solution, Mach5 Search, delivers unmatched query speeds while dramatically reducing infrastructure costs through intelligent storage-compute separation. By seamlessly connecting to your existing data lakes and supporting industry-standard APIs including OpenSearch, Elastic DQL, and our purpose-built Mach5 Query Language, we empower your team to extract actionable insights from unlimited data volumes—without compromise.
+        </p>
+        <button class="mt-6 px-5 py-2 bg-[#222222] text-white rounded hover:bg-gray-700 text-sm">
+          Learn more
+        </button>
+      </div>
+  
+      <!-- Right: Image -->
+      <div class="flex justify-end pt-10">
+        <img 
+          src="assets/images/about-us-1.jpg" 
+          alt="Dashboard preview" 
+          class="rounded-lg shadow-lg w-[381px] max-h-[500px] object-cover"
+        />
+      </div>
+      
+    </div>
+  </section>
+  
+
+
+  <section class="max-w-6xl mx-auto px-4 py-16 bg-[#222222] font-grotesk">
+    <h2 class="text-3xl font-bold text-center mb-12 text-white font-grotesk">Meet the Mach5 Team</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      
+      <!-- Team Member Card -->
+      <div>
+        <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
+        <div class="text-left px-1">
+          <p class="font-semibold text-white">Name 1</p>
+          <p class="text-sm text-gray-400">Role</p>
+          <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+
+        </div>
+      </div>
+  
+      <div>
+        <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
+        <div class="text-left px-1">
+          <p class="font-semibold text-white">Name 1</p>
+          <p class="text-sm text-gray-400">Role</p>
+          <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+        </div>
+      </div>
+  
+      <div>
+        <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
+        <div class="text-left px-1">
+          <p class="font-semibold text-white">Name 1</p>
+          <p class="text-sm text-gray-400">Role</p>
+          <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+        </div>
+      </div>
+  
+      <div>
+        <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
+        <div class="text-left px-1">
+          <p class="font-semibold text-white">Name 1</p>
+          <p class="text-sm text-gray-400">Role</p>
+          <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+        </div>
+      </div>
+  
+      <div>
+        <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
+        <div class="text-left px-1">
+          <p class="font-semibold text-white">Name 1</p>
+          <p class="text-sm text-gray-400">Role</p>
+          <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+        </div>
+      </div>
+  
+      <div>
+        <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
+        <div class="text-left px-1">
+          <p class="font-semibold text-white">Name 1</p>
+          <p class="text-sm text-gray-400">Role</p>
+          <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+  <section class="bg-[#222222] text-white py-16 px-1">
+    <div class="max-w-6xl mx-auto">
+        <!-- Section header -->
+        <div class="text-center mb-10">
+            <h2 class="font-bold text-3xl inline-block">
+                <span 
+                    class="text-transparent bg-clip-text"
+                    style="background-image: linear-gradient(to right, #FF5C1B 0%, #FFA581 22%, #FF5C1B 33%);"
+                >
+                    Talk to our team to learn more <i class="fas fa-arrow-right text-2xl"></i>
+                </span>
+            </h2>
+        </div>
+
+        <!-- Rest of your content remains the same -->
+        <div class="bg-[#1B1B1B] p-6 md:p-8 rounded-md flex flex-col md:flex-row gap-6 items-start border-2 border-gray-600">
+            <div class="flex items-start gap-6">
+                <!-- Image section -->
+                <div class="flex-shrink-0 relative">
+                    <img src="assets/images/image.png" alt="Profile" class="rounded-md w-[159px] h-[192px] object-cover" />
+                    <!-- Decorative orange background block -->
+                    <div class="absolute -bottom-2 -left-2 w-6 h-6 bg-[#FF5C1B] z-[-1] rounded-md"></div>
+                </div>
+                
+                <!-- Text content -->
+                <div class="flex-1 text-[13px] leading-[1.5] text-gray-300 mt-1 flex flex-col justify-between min-h-[200px]">
+                    <!-- Top section with SVG and text -->
+                    <div class="flex items-start gap-3">
+                        <!-- Left SVG (now part of flex flow, not absolute) -->
+                        <span class="text-orange-500 text-xl flex-shrink-0">
+                            <svg width="17" height="31" viewBox="0 0 17 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 30.6509L0.00019455 30.6509L0.00019455 13.634L6.8172 -2.47955e-05H15.2915L8.50864 13.634H17L17 30.6509Z" fill="#FF5C1B"/>
+                            </svg>
+                        </span>
+                        
+                        <!-- Text content -->
+                        <p class="text-xl text-left mt-0 flex-grow text-gray-400">
+                            By adopting Mach5, Permiso streamlined its data infrastructure, allowing all raw and processed event data to be stored in a single, centralized event store. This enabled multiple security analytics use cases without the need to constantly rethink infrastructure.
+                        </p>
+                    </div>
+                
+                    <!-- Bottom section -->
+                    <div class="flex justify-between items-end mt-auto mb-3">
+                        <!-- Button in bottom-left -->
+                        <button class="relative bg-[#222222] text-white text-xs py-[13px] px-[16px] transition-all duration-200 overflow-hidden group" style="border-radius: 10px">
+                          <!-- Gradient border background -->
+                          <span class="absolute inset-0 p-[1px]" style="border-radius: 10px">
+                            <span class="absolute inset-0 bg-gradient-to-b from-[#5B5B5B] to-[#3F3F3F]" style="border-radius: 9px"></span>
+                          </span>
+                          <!-- Background overlay with hover effect -->
+                          <span class="absolute inset-0  bg-[#222222] group-hover:bg-[#2a2a2a] transition-all duration-200 m-[1px]" style="border-radius: 9px"></span>
+                          <!-- Button text -->
+                          <span class="relative z-10 text-[#FEFEFE]">Get to know more</span>
+                        </button>
+                        
+                        <!-- Bottom-right SVG -->
+                        <span class="text-orange-500 text-xl">
+                            <svg width="17" height="31" viewBox="0 0 17 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0.349121H16.9998V17.366L10.1828 31H1.70852L8.49136 17.366H0V0.349121Z" fill="#FF5C1B"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="max-w-6xl mx-auto px-4 py-10 bg-black text-white">
+  <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Mach5 by numbers</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <!-- Funding -->
+    <div class="bg-gray-900 bg-opacity-40 rounded-lg p-5">
+      <div class="flex items-start">
+        <div class="bg-gray-800 p-2 rounded-lg mr-4">
+          <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm text-gray-400">Funding till date</p>
+          <p class="text-xl font-bold mt-1">31.8M USD</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Founded in -->
+    <div class="bg-gray-900 bg-opacity-40 rounded-lg p-5">
+      <div class="flex items-start">
+        <div class="bg-gray-800 p-2 rounded-lg mr-4">
+          <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm text-gray-400">Founded in</p>
+          <p class="text-xl font-bold mt-1">2020</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Team size -->
+    <div class="bg-gray-900 bg-opacity-40 rounded-lg p-5">
+      <div class="flex items-start">
+        <div class="bg-gray-800 p-2 rounded-lg mr-4">
+          <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v1h8v-1zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-1a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v1h-3zM4.75 14.094A5.973 5.973 0 004 17v1H1v-1a3 3 0 013.75-2.906z"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm text-gray-400">Team size</p>
+          <p class="text-xl font-bold mt-1">200+</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Supported Compliance -->
+    <div class="bg-gray-900 bg-opacity-40 rounded-lg p-5">
+      <div class="flex items-start">
+        <div class="bg-gray-800 p-2 rounded-lg mr-4">
+          <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm text-gray-400">Supported Compliance</p>
+          <p class="text-xl font-bold mt-1">20+</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Audit Partners -->
+    <div class="bg-gray-900 bg-opacity-40 rounded-lg p-5">
+      <div class="flex items-start">
+        <div class="bg-gray-800 p-2 rounded-lg mr-4">
+          <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm text-gray-400">Audit Partners</p>
+          <p class="text-xl font-bold mt-1">40+</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Global Reach -->
+    <div class="bg-gray-900 bg-opacity-40 rounded-lg p-5">
+      <div class="flex items-start">
+        <div class="bg-gray-800 p-2 rounded-lg mr-4">
+          <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm text-gray-400">Global Reach</p>
+          <p class="text-xl font-bold mt-1">75+ Countries</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</body>
+</html>
+
