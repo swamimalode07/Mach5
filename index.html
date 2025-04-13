@@ -104,7 +104,9 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen overflow-hidden flex items-center bg-dark">
- 
+      <!-- Gradient Overlay -->
+      <div class="absolute inset-0 bg-[linear-gradient(to_top,_#FF5C1B_30%,_#222222_90%)] z-0"></div>
+    
       <div class="container mx-auto px-6 pt-32 pb-20 relative z-10">
         <div class="max-w-5xl mx-auto text-center">
           <h1 class="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
@@ -114,22 +116,23 @@
           <p class="text-gray-400 mb-12 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
             Transform your data infrastructure with lightning-fast search capabilities and powerful analytics tools built for modern cloud architectures.
           </p>
-
+    
           <div class="max-w-xl mx-auto flex flex-col md:flex-row gap-4 mb-20">
             <div class="flex-1 relative">
               <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                 <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
               <input
                 type="text"
                 placeholder="Enter your work email here"
-                class="w-full pl-12 pr-4 py-3.5 rounded-lg bg-white/10 text-white border border-white/10 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm backdrop-blur-xl transition-all duration-200"
+                class="w-full pl-4 pr-4 py-3.5 rounded-lg bg-[#2F3033] text-white  focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm backdrop-blur-xl transition-all duration-200"
               />
             </div>
             <button
-              class="md:w-auto w-full bg-primary text-white px-8 py-3.5 rounded-lg hover:bg-opacity-90 text-sm font-medium transition-all duration-200 shadow-lg shadow-primary/20 flex items-center justify-center space-x-2"
+              class="md:w-auto w-full bg-[#FF5C1B] text-white px-8 py-3.5 rounded-lg hover:bg-opacity-90 text-sm font-medium transition-all duration-200 shadow-lg shadow-primary/20 flex items-center justify-center space-x-2"
             >
               <span>Get started for free</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -137,7 +140,7 @@
               </svg>
             </button>
           </div>
-
+    
           <div class="relative">
             <div class="absolute -inset-4 bg-gradient-radial from-primary/10 via-transparent to-transparent blur-2xl z-0"></div>
             <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50 z-10">
@@ -147,33 +150,33 @@
                 class="w-full h-auto"
               />
             </div>
-            </div>
           </div>
+        </div>
       </div>
     </section>
-
+    
 
     <!-- Partners Section -->
     <section class="bg-dark w-full px-4 sm:px-6 md:px-12 py-10 overflow-x-hidden">
-      <h3 class="text-center text-xs sm:text-sm md:text-base font-semibold text-gray-500 tracking-wide mb-8">
+      <h3 class="text-center text-xs sm:text-sm md:text-base font-semibold text-[#A9B1B5] tracking-wide mb-8">
         Liked by Partners and Customers alike
       </h3>
 
-      <div class="flex flex-wrap justify-center items-center gap-6 sm:gap md:gap-16 opacity-50">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Snowflake_Logo.svg/1200px-Snowflake_Logo.svg.png" 
-             alt="Snowflake" class="h-8 sm:h-10 grayscale max-w-[120px]" />
+      <div class="flex flex-wrap justify-center items-center gap-6 sm:gap md:gap-16 opacity-100">
+        <img src="assets/images/partners/snowflake.png" 
+             alt="Snowflake" class="h-8 sm:h-10  max-w-full" />
     
-        <img src="https://www.databricks.com/sites/default/files/2023-08/databricks-default.png?v=1712162038" 
-             alt="Databricks" class="h-8 sm:h-10 grayscale max-w-[120px]" />
+        <img src="assets/images/partners/databricks.png" 
+             alt="Databricks" class="h-8 sm:h-10  max-w-full" />
     
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png" 
-             alt="Google Cloud" class="h-8 sm:h-10 grayscale max-w-[140px]" />
+        <img src="assets/images/partners/Googlecloud.png" 
+             alt="Google Cloud" class="h-8 sm:h-10  max-w-full" />
     
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" 
-             alt="AWS" class="h-8 sm:h-10 grayscale max-w-[130px]" />
+        <img src="assets/images/partners/aws.png" 
+             alt="AWS" class="h-8 sm:h-10  max-w-full" />
     
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Microsoft_Azure_Logo.svg/1280px-Microsoft_Azure_Logo.svg.png" 
-             alt="Azure" class="h-8 sm:h-10 grayscale max-w-[120px]" />
+        <img src="assets/images/partners/azure.png" 
+             alt="Azure" class="h-8 sm:h-10  max-w-full" />
       </div>
     </section>
     
@@ -186,38 +189,58 @@
     </h2>
   
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-      <div class="space-y-4 border-2 border-gray-800 p-6 sm:p-8 rounded-xl">
-        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
-          <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M8 17.345a4.76 4.76 0 0 0 2.558 1.618c2.274.589 4.512-.446 4.999-2.31.487-1.866-1.273-3.9-3.546-4.49-2.273-.59-4.034-2.623-3.547-4.488.486-1.865 2.724-2.899 4.998-2.31.982.236 1.87.793 2.538 1.592M11.12 19.516V21m0-18v2.2"/>
+      <div class="space-y-4 border-2 border-gray-600 p-6 sm:p-8 rounded-xl h-[396px]">
+        <div class="w-12 h-12 bg-[#2F3033] rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+          <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 13.082C1 14.6579 1.31039 16.2183 1.91345 17.6742C2.5165 19.1301 3.40042 20.453 4.51472 21.5673C5.62902 22.6816 6.95189 23.5655 8.4078 24.1686C9.86371 24.7716 11.4241 25.082 13 25.082C14.5759 25.082 16.1363 24.7716 17.5922 24.1686C19.0481 23.5655 20.371 22.6816 21.4853 21.5673C22.5996 20.453 23.4835 19.1301 24.0866 17.6742C24.6896 16.2183 25 14.6579 25 13.082C25 11.5062 24.6896 9.94574 24.0866 8.48983C23.4835 7.03392 22.5996 5.71105 21.4853 4.59675C20.371 3.48245 19.0481 2.59853 17.5922 1.99548C16.1363 1.39242 14.5759 1.08203 13 1.08203C11.4241 1.08203 9.86371 1.39242 8.4078 1.99548C6.95189 2.59853 5.62902 3.48245 4.51472 4.59675C3.40042 5.71105 2.5165 7.03392 1.91345 8.48983C1.31039 9.94574 1 11.5062 1 13.082Z" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.7333 9.08204C16.4918 8.66305 16.1409 8.31764 15.7181 8.08277C15.2954 7.84791 14.8167 7.73243 14.3333 7.7487H11.6667C10.9594 7.7487 10.2811 8.02965 9.78105 8.52975C9.28095 9.02985 9 9.70813 9 10.4154C9 11.1226 9.28095 11.8009 9.78105 12.301C10.2811 12.8011 10.9594 13.082 11.6667 13.082H14.3333C15.0406 13.082 15.7189 13.363 16.219 13.8631C16.719 14.3632 17 15.0415 17 15.7487C17 16.4559 16.719 17.1342 16.219 17.6343C15.7189 18.1344 15.0406 18.4154 14.3333 18.4154H11.6667C11.1833 18.4316 10.7046 18.3162 10.2819 18.0813C9.85913 17.8464 9.5082 17.501 9.26667 17.082" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13 6.41541V19.7487" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h3 class="text-lg font-semibold tracking-tight">Cost Effective</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">
+        <h3 class="text-xl font-semibold tracking-tight">Cost Effective</h3>
+        <p class="text-gray-400 text-lg leading-relaxed">
           Save costs with optimized resource usage. Scale only when needed and never overpay for idle infrastructure.
         </p>
       </div>
-      <div class="space-y-4 border-2 border-gray-800 p-6 sm:p-8 rounded-xl">
-        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4 8-8M14 7h7v7" />
-          </svg>
+      
+      <div class="space-y-4 border-2 border-gray-600 p-6 sm:p-8 rounded-xl">
+        <div class="w-12 h-12 bg-[#2F3033] rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+          <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_2497_1601)">
+            <path d="M4.66602 22.7487L12.666 14.7487L17.9993 20.0821L28.666 9.41541" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.333 9.41541H28.6663V18.7487" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_2497_1601">
+            <rect width="32" height="32" fill="white" transform="translate(0.666016 0.0820312)"/>
+            </clipPath>
+            </defs>
+            </svg>
+            
         </div>
-        <h3 class="text-lg font-semibold tracking-tight">Adaptive & Scalable</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">
+        <h3 class="text-xl font-semibold tracking-tight">Adaptive & Scalable</h3>
+        <p class="text-gray-400 text-lg leading-relaxed">
           Automatically scale resources based on your needs. Our platform ensures performance at any scale.
         </p>
       </div>
-      <div class="space-y-4 border-2 border-gray-800 p-6 sm:p-8 rounded-xl">
-        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 3C7.029 3 3 4.79 3 7v10c0 2.21 4.029 4 9 4s9-1.79 9-4V7c0-2.21-4.029-4-9-4zM3 7c0 2.21 4.029 4 9 4s9-1.79 9-4m-18 5c0 2.21 4.029 4 9 4s9-1.79 9-4m-18 5c0 2.21 4.029 4 9 4s9-1.79 9-4" />
-          </svg>
+      <div class="space-y-4 border-2 border-gray-600 p-6 sm:p-8 rounded-xl">
+        <div class="w-12 h-12 bg-[#2F3033] rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+          <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_2497_1607)">
+            <path d="M5.66699 8.08203C5.66699 9.1429 6.7908 10.1603 8.79119 10.9105C10.7916 11.6606 13.5047 12.082 16.3337 12.082C19.1626 12.082 21.8757 11.6606 23.8761 10.9105C25.8765 10.1603 27.0003 9.1429 27.0003 8.08203C27.0003 7.02117 25.8765 6.00375 23.8761 5.2536C21.8757 4.50346 19.1626 4.08203 16.3337 4.08203C13.5047 4.08203 10.7916 4.50346 8.79119 5.2536C6.7908 6.00375 5.66699 7.02117 5.66699 8.08203Z" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.66699 8.08203V16.082C5.66699 17.1429 6.7908 18.1603 8.79119 18.9105C10.7916 19.6606 13.5047 20.082 16.3337 20.082C19.1626 20.082 21.8757 19.6606 23.8761 18.9105C25.8765 18.1603 27.0003 17.1429 27.0003 16.082V8.08203" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.66699 16.082V24.082C5.66699 25.1429 6.7908 26.1603 8.79119 26.9105C10.7916 27.6606 13.5047 28.082 16.3337 28.082C19.1626 28.082 21.8757 27.6606 23.8761 26.9105C25.8765 26.1603 27.0003 25.1429 27.0003 24.082V16.082" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_2497_1607">
+            <rect width="32" height="32" fill="white" transform="translate(0.333984 0.0820312)"/>
+            </clipPath>
+            </defs>
+            </svg>
+            
         </div>
-        <h3 class="text-lg font-semibold tracking-tight">Converged</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">
+        <h3 class="text-xl font-semibold tracking-tight">Converged</h3>
+        <p class="text-gray-400 text-lg leading-relaxed">
           Seamlessly access and integrate data across distributed systems using robust APIs and query engines.
         </p>
       </div>
@@ -230,7 +253,7 @@
       <div class="mb-10 text-center max-w-5xl mx-auto mt-10">
         <h1 class="text-xl md:text-3xl font-bold text-white mb-1">Transforming Data Management</h1>
         <h2 class="text-xl md:text-3xl font-bold text-white mb-4">Growth-Driven Organizations</h2>
-        <p class="text-gray-600 text-sm md:text-base leading-tight">
+        <p class="text-gray-400 text-sm md:text-base leading-tight">
           Data driven companies often face challenges with exponentially growing data volumes, skyrocketing infrastructure costs, and fragmented search capabilities that slow down critical insights making scalability a tough and costly affair.
         </p>
       </div>
@@ -404,51 +427,111 @@
   </section>
 
     <!--Schedule a demo section-->
-    <section class="relative py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-t from-orange-600 to-transparent overflow-hidden">
-      
-        <div class="absolute inset-0 z-0 pointer-events-none">
-          <div class="absolute inset-x-0 bottom-0 h-[100px] bg-[url('/3d.png')] bg-no-repeat bg-bottom bg-cover">
-            <div class="h-full w-full bg-gradient-to-t from-orange-500/30 via-orange-500/0 to-transparent"></div>
-          </div>
-        </div>
-
-        <div class="relative z-10 max-w-2xl mx-auto text-center">
-          <h1 class="text-3xl sm:text-4xl font-bold text-white mb-10">
-            Nam feugiat urna est, id vehicula nulla elementum in
-          </h1>
-          <a href="#" class="inline-flex items-center text-sm font-medium bg-white text-orange-500 px-5 py-3 rounded-lg">
-            Schedule a demo
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </a>
-        </div>
-      </section>
+   <section class="relative py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-t from-orange-600 to-transparent overflow-hidden mb-10">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <div class="absolute inset-x-0 bottom-0 h-[100px] bg-[url('/3d.png')] bg-no-repeat bg-bottom bg-cover">
+        <div class="h-full w-full bg-gradient-to-t from-orange-500/30 via-orange-500/0 to-transparent"></div>
+      </div>
+    </div>
+  
+    <div class="relative z-10 max-w-2xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-10">
+        Nam feugiat urna est, id vehicula nulla elementum in
+      </h1>
+      <a href="#" class="inline-flex items-center text-sm font-bold font-grotesk bg-white text-orange-500 px-5 py-3 rounded-lg mb-8">
+        Schedule a demo
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  
+    <!-- SVG positioned at bottom and full width -->
+    <div class="absolute bottom-0 left-0 right-0 w-full">
+      <svg class="w-full h-auto" viewBox="15700 0 1400 111" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <g opacity="0.4">
+          <path d="M16242.7 0.708772L0.491803 109.053" stroke="#FEFEFE"/>
+          <path d="M16274.2 0.708772L15527 109.86" stroke="#FEFEFE"/>
+          <path d="M16305.7 0.708772L15974.4 109.859" stroke="#FEFEFE"/>
+          <path d="M16337.2 0.708772L16175.7 109.859" stroke="#FEFEFE"/>
+          <path d="M16368.7 0.708772L16319.3 109.859" stroke="#FEFEFE"/>
+          <path d="M16400.2 0.708772L16449.7 109.859" stroke="#FEFEFE"/>
+          <path d="M16431.7 0.708772L16593.2 109.859" stroke="#FEFEFE"/>
+          <path d="M16463.2 0.708772L16794.5 109.859" stroke="#FEFEFE"/>
+          <path d="M16494.7 0.708772L17241.9 109.86" stroke="#FEFEFE"/>
+          <path d="M16526.2 0.708772L32768.5 109.053" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.2" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.2" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.2" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.2" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.2" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.2" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.2" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.2" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.2" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.2" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.2" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.2" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.3" stroke="#FEFEFE"/>
+          <path d="M16242.7 0.708772H16526.3" stroke="#FEFEFE"/>
+          <path d="M16242.6 0.709464H16526.3" stroke="#FEFEFE"/>
+          <path d="M16242.5 0.710156H16526.4" stroke="#FEFEFE"/>
+          <path d="M16242.3 0.711541H16526.6" stroke="#FEFEFE"/>
+          <path d="M16242 0.713617H16526.9" stroke="#FEFEFE"/>
+          <path d="M16241.5 0.716386H16527.4" stroke="#FEFEFE"/>
+          <path d="M16240.6 0.722615H16528.3" stroke="#FEFEFE"/>
+          <path d="M16175.5 1.16075H16593.4" stroke="#FEFEFE"/>
+          <path d="M16106.4 1.62519H16662.6" stroke="#FEFEFE"/>
+          <path d="M16052 1.99065H16716.9" stroke="#FEFEFE"/>
+          <path d="M15978.9 2.48209H16790.1" stroke="#FEFEFE"/>
+          <path d="M15881.4 3.13687H16887.5" stroke="#FEFEFE"/>
+          <path d="M15752.8 4.00138H17016.2" stroke="#FEFEFE"/>
+          <path d="M15584.3 5.13375H17184.7" stroke="#FEFEFE"/>
+          <path d="M15365.4 6.60459H17403.5" stroke="#FEFEFE"/>
+          <path d="M15083.2 8.50042H17685.7" stroke="#FEFEFE"/>
+          <path d="M14721.9 10.9292H18047" stroke="#FEFEFE"/>
+          <path d="M14262.4 14.0169H18506.5" stroke="#FEFEFE"/>
+          <path d="M13681.7 17.9193H19087.3" stroke="#FEFEFE"/>
+          <path d="M12952.2 22.8219H19816.8" stroke="#FEFEFE"/>
+          <path d="M12040.9 28.9454H20728" stroke="#FEFEFE"/>
+          <path d="M10908.8 36.5537H21860.1" stroke="#FEFEFE"/>
+          <path d="M9509.64 45.9567H23259.3" stroke="#FEFEFE"/>
+          <path d="M7788.81 57.5206H24980.1" stroke="#FEFEFE"/>
+          <path d="M5682.33 71.6766H27086.6" stroke="#FEFEFE"/>
+          <path d="M3115.32 88.9273H29653.6" stroke="#FEFEFE"/>
+          <path d="M0.510814 109.86H32768.4" stroke="#FEFEFE"/>
+          <path d="M16490.5 9.72831L16579.9 39.1315" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round"/>
+          <path d="M16253 57.6016L16176.7 109.206" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+  </section>
   
 
     <!-- Case Studies -->
     <section>
       <div class="max-w-7xl mx-auto px-4 py-12">
-        <h1 class="text-2xl font-bold text-center mb-2 font-grotesk">Case studies</h1>
+        <h1 class="text-4xl font-bold text-center mb-10 font-grotesk">Case studies</h1>
         
-        <p class="text-lg text-center max-w-3xl mx-auto mb-12 font-grotesk text-gray-500">
-          Phasellus maximus congue vehicula. Sed scelerisque lorem euismod diam tincidunt, in ultricies metus gravida.
-        </p>
-        
-        <div class="flex justify-end space-x-4 mb-6">
-          <button class="w-12 h-12 rounded bg-gray-900 border border-gray-700 flex items-center justify-center text-white hover:bg-gray-800">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                <text x="0" y="15" font-size="16" fill="currentColor" font-weight="bold">←</text>
-              </svg>
-              
-              
-          </button>
-          <button class="w-12 h-12 rounded bg-orange-500 flex items-center justify-center text-white hover:bg-orange-600">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                <text x="0" y="15" font-size="16" fill="currentColor">→</text>
-              </svg>
-              
-          </button>
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+          <span class="text-lg max-w-3xl font-grotesk text-gray-400 mb-4 md:mb-0">
+            Phasellus maximus congue vehicula. Sed scelerisque lorem euismod diam tincidunt, in ultricies metus gravida.
+          </span>
+          
+          <div class="flex justify-end space-x-4">
+            <button class="w-12 h-12 rounded bg-gray-900 border border-primary flex items-center justify-center text-white hover:bg-gray-800">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.81818 11.9205L6.98864 10.7614L3.48295 7.25568H12V5.5625H3.48295L6.98864 2.0625L5.81818 0.897727L0.306818 6.40909L5.81818 11.9205Z" fill="#FF5C1B"/>
+                </svg>
+                
+            </button>
+            <button class="w-12 h-12 rounded bg-primary flex items-center justify-center text-white hover:bg-orange-600">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.18182 11.9205L5.01136 10.7614L8.51705 7.25568H0V5.5625H8.51705L5.01136 2.0625L6.18182 0.897727L11.6932 6.40909L6.18182 11.9205Z" fill="#FEFEFE"/>
+                </svg>
+                
+            </button>
+          </div>
         </div>
         
         <div class="bg-white rounded-lg overflow-hidden">
@@ -459,21 +542,20 @@
                 <span class="ml-2 text-black text-xl font-bold font-grotesk">PERMISO</span>
               </div>
               
-              <div class="border-t border-gray-300 my-4"></div>
+              <div class="border-t-2 border-black my-4"></div>
               
               <h2 class="text-black text-2xl font-bold mb-2 font-grotesk">Officia adipiscing reprehenderit esse in sunt</h2>
               <div class="text-gray-600 mb-4 font-grotesk font-bold">Cybersecurity</div>
               
-              <p class="text-gray-800 mb-8">
+              <p class="text-gray-900 mb-8">
                 Cupidatat, ipsum ad aliquip cillum. Aliquip cillum duis aute excepteur consectetur lorem quis. Duis aute excepteur consectetur lorem. Excepteur consectetur lorem quis, id ullamco. Quis id ullamco culpa est ex laboris. Ullamco culpa est ex laboris, ad in ea.
               </p>
               
               <a href="#" class="text-orange-500 font-medium flex items-center hover:text-orange-600 font-grotesk">
                 See the full story
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <text x="0" y="15" font-size="16" fill="currentColor">→</text>
-                  </svg>
-                  
+                  <text x="0" y="15" font-size="16" fill="currentColor">→</text>
+                </svg>
               </a>
             </div>
             <div class="md:w-1/2 bg-gray-200">
@@ -487,7 +569,7 @@
 
    <section>
   <div class="bg-dark text-white p-5 sm:p-10">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       
       <div class="flex flex-col md:flex-row gap-6 mb-8">
        
@@ -497,14 +579,14 @@
               <img 
                 src="https://imgs.search.brave.com/U8Gh_WPXBSBPpRiVrtuK9QXFM-xkMeNFd7DKOFWO1fQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vcGVu/c2VhcmNoLm9yZy9h/c3NldHMvbWVkaWEv/cGFydG5lcnMvbWFj/aDUvbWFjaDUtbG9n/by5wbmc" 
                 alt="Icon"
-                class="w-6 h-6 mr-2"
+                class="w-10 h-8 mr-2"
               />
-              <h2 class="text-2xl font-grotesk font-bold">Resources</h2>
+              <h2 class="text-4xl font-grotesk font-bold">Resources</h2>
             </div>
         
             <p class="text-gray-400 mb-6 font-grotesk">Fugiat veniam aliquip amet labore</p>
         
-            <a href="#" class="inline-block border border-orange-500 text-orange-500 px-4 py-2 rounded-xl hover:bg-orange-500/10 transition-colors font-grotesk">
+            <a href="#" class="inline-block border border-primary text-primary px-6 py-3 rounded-lg hover:bg-orange-500/10 transition-colors font-grotesk">
               See all posts →
             </a>
           </div>
@@ -521,7 +603,7 @@
               </div>
               <h3 class="text-xl font-semibold mb-2 font-grotesk">Laboris consectetur nostrud fugiat elit consectetur officia duis</h3>
               <p class="text-sm text-gray-400 mb-4 font-grotesk">By Amit Trivedi</p>
-              <button class="w-full bg-orange-600 text-white py-3 rounded hover:bg-orange-700 transition-colors font-bold font-grotesk">Read more</button>
+              <button class="w-full bg-primary text-white py-3 rounded-xl hover:bg-orange-600 transition-colors font-bold font-grotesk">Read more</button>
             </div>
           </div>
         </div>
@@ -530,15 +612,26 @@
     
 <div class="relative" id="carousel-container">
   <div class="flex overflow-x-auto pb-6 gap-4 snap-x scrollbar-hide md:flex-wrap md:justify-center" id="carousel">
-    <style>
+      <style>
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
       }
       @media (min-width: 1024px) {
         #carousel {
           overflow-x: visible;
-          flex-wrap: nowrap;
+          flex-wrap: wrap;
           justify-content: center;
+          gap: 1.5rem;
+        }
+        #carousel > div {
+          flex: 1;
+          min-width: 360px;
+          max-width: calc(33.333% - 1rem);
+        }
+      }
+      @media (min-width: 1280px) {
+        #carousel > div {
+          max-width: calc(25% - 1.5rem);
         }
       }
     </style>
@@ -549,11 +642,11 @@
         <div class="p-4">
           <div class="flex justify-between items-center mb-2">
             <p class="text-sm text-gray-400 font-grotesk">Jan 18, 2025</p>
-            <span class="border-2 border-orange-500 text-xs px-2 py-1 rounded-xl font-grotesk">Video</span>
+            <span class="border-2 border-primary text-xs px-2 py-1 rounded-xl font-grotesk">Video</span>
           </div>
           <h3 class="text-lg font-semibold mb-2 font-grotesk">Laboris consectetur nostrud fugiat elit consectetur officia duis</h3>
           <p class="text-sm text-gray-400 mb-4 font-grotesk">By Amit Trivedi</p>
-          <button class="w-full bg-orange-600 text-white py-2 rounded hover:bg-orange-700 transition-colors font-grotesk">Read more</button>
+          <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-orange-700 transition-colors font-grotesk">Read more</button>
         </div>
       </div>
     </div>
@@ -568,7 +661,7 @@
           </div>
           <h3 class="text-lg font-semibold mb-2 font-grotesk">Laboris consectetur nostrud fugiat elit consectetur officia duis</h3>
           <p class="text-sm text-gray-400 mb-4 font-grotesk">By Amit Trivedi</p>
-          <button class="w-full bg-orange-600 text-white py-2 rounded hover:bg-orange-700 transition-colors font-grotesk">Read more</button>
+          <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-orange-700 transition-colors font-grotesk">Read more</button>
         </div>
       </div>
     </div>
@@ -583,44 +676,31 @@
           </div>
           <h3 class="text-lg font-semibold mb-2 font-grotesk">Laboris consectetur nostrud fugiat elit consectetur officia duis</h3>
           <p class="text-sm text-gray-400 mb-4 font-grotesk">By Amit Trivedi</p>
-          <button class="w-full bg-orange-600 text-white py-2 rounded hover:bg-orange-700 transition-colors font-grotesk">Read more</button>
+          <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-orange-700 transition-colors font-grotesk">Read more</button>
         </div>
       </div>
     </div>
 
-    <div class="flex-shrink-0 w-[85%] sm:w-[280px] snap-start" data-index="3">
-      <div class="bg-dark border-2 border-gray-600 rounded-lg overflow-hidden">
-        <div class="bg-gray-300 h-32"></div>
-        <div class="p-4">
-          <div class="flex justify-between items-center mb-2">
-            <p class="text-sm text-gray-400 font-grotesk">Jan 18, 2025</p>
-            <span class="border-2 border-orange-500 text-xs px-2 py-1 rounded-xl font-grotesk">Webinar</span>
-          </div>
-          <h3 class="text-lg font-semibold mb-2 font-grotesk">Laboris consectetur nostrud fugiat elit consectetur officia duis</h3>
-          <p class="text-sm text-gray-400 mb-4 font-grotesk">By Amit Trivedi</p>
-          <button class="w-full bg-orange-600 text-white py-2 rounded hover:bg-orange-700 transition-colors font-grotesk">Read more</button>
-        </div>
-      </div>
-    </div>
+    
   </div>
 
   <div class="flex justify-center mt-4 gap-2 lg:hidden" id="dots-container">
     <span class="h-2 w-2 rounded-full bg-orange-500" data-dot-index="0"></span>
     <span class="h-2 w-2 rounded-full bg-gray-600" data-dot-index="1"></span>
     <span class="h-2 w-2 rounded-full bg-gray-600" data-dot-index="2"></span>
-    <span class="h-2 w-2 rounded-full bg-gray-600" data-dot-index="3"></span>
+   
   </div>
 </div>
   
 </section>
 
     <!-- newsletter -->
-    <section class="relative overflow-hidden py-24 m-10 bg-gradient-to-t from-orange-500 to-orange-1100 rounded-lg">
-        <div class="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent"></div>
+    <section class="relative overflow-hidden py-14 m-10 bg-gradient-to-t from-orange-500 to-orange-1100 rounded-lg">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/2 to-orange-800"></div>
         <div class="container mx-auto px-6 text-center relative">
             <h2 class="text-4xl font-bold mb-4 tracking-tight">Stay Updated with Our Latest Resources</h2>
             <p class="text-4xl font-bold mb-4 tracking-tight">Delivered to Your Inbox!</p>
-            <p class="text-white/60 mb-4">Empowering Your Data Strategy with Scalable and Efficient Search Solutions</p>
+            <p class="text-white/90 mb-4">Empowering Your Data Strategy with Scalable and Efficient Search Solutions</p>
             <div class="max-w-xl mx-auto relative">
                 <input 
                   type="email" 
@@ -628,9 +708,11 @@
                   class="w-full pr-12 pl-4 py-4 rounded-lg bg-gray-900 text-dark border-0 focus:outline-none focus:ring-2 focus:ring-primary text-sm"
                 />
                 <button class="absolute top-1/2 right-3 -translate-y-1/2 bg-gray-900  text-white p-2 rounded-lg hover:bg-opacity-90 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-5 w-5 text-orange-500" viewBox="0 0 24 24">
-                    <path d="M9.036 16.5l-.401 4.387c.574 0 .825-.247 1.134-.542l2.712-2.541 5.625 4.11c1.032.569 1.77.271 2.053-.951l3.711-17.4c.378-1.739-.664-2.417-1.67-2.093L1.317 9.655c-1.703.601-1.682 1.45-.293 1.842l5.625 1.759 13.059-8.214c.614-.38 1.173-.169.713.211L9.036 16.5z"/>
-                  </svg>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.5358 21.6861C14.5738 21.7807 14.6398 21.8615 14.7251 21.9176C14.8103 21.9737 14.9107 22.0023 15.0126 21.9997C15.1146 21.9971 15.2134 21.9633 15.2956 21.903C15.3779 21.8426 15.4397 21.7586 15.4728 21.6621L21.9728 2.66206C22.0048 2.57345 22.0109 2.47756 21.9904 2.38561C21.9699 2.29366 21.9236 2.20945 21.857 2.14283C21.7904 2.07622 21.7062 2.02995 21.6143 2.00945C21.5223 1.98894 21.4264 1.99505 21.3378 2.02706L2.33781 8.52706C2.2413 8.56015 2.15723 8.62197 2.09688 8.70423C2.03652 8.78648 2.00278 8.88523 2.00016 8.98722C1.99755 9.0892 2.0262 9.18955 2.08226 9.27478C2.13833 9.36002 2.21912 9.42606 2.31381 9.46406L10.2438 12.6441C10.4945 12.7444 10.7223 12.8945 10.9134 13.0853C11.1045 13.2761 11.255 13.5036 11.3558 13.7541L14.5358 21.6861Z" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21.8541 2.14697L10.9141 13.086" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    
                 </button>
               </div>
               
