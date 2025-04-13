@@ -107,278 +107,317 @@
     </nav>
   </section>
   
-
-  <section class="bg-[linear-gradient(to_top,_#FF5C1B_30%,_#222222_90%)] py-20">
-    <div class="max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-10 items-center">
-      
-      <!-- Left: Text Content -->
-      <div class="text-white pt-10">
-        <h2 class="text-6xl md:text-5xl font-bold leading-snug">
-          Revolutionizing <br>
-          <span class="text-[#FF5C1B]">Search <span class="text-white">&</span> Analytics</span><br>
-          for <span class="text-white">Security Teams</span>
+<!-- Hero Section with Tailwind CSS -->
+<section class="bg-[linear-gradient(to_top,_#FF5C1B_30%,_#222222_90%)] py-10 md:py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
+    <div class="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+    
+      <div class="text-white pt-5 md:pt-10" style="padding-top:80px ">
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold lg:w-[800px] ">
+          <div>Revolutionizing</div>
+          <div class="text-[#FF5C1B]">Search <span class="text-white">&</span> Analytics</div>
+          <div>for Security Teams</div>
         </h2>
-        <p class="mt-6 text-gray-100 text-sm leading-relaxed max-w-lg">
-            Analysis of event data is critical for security analytics, SIEM, observability, and APM applications, but legacy solutions have forced impossible tradeoffs between performance, scale, and cost. Mach5 Software breaks these constraints with our high-performance search and analytics platform. 
-            Our solution, Mach5 Search, delivers unmatched query speeds while dramatically reducing infrastructure costs through intelligent storage-compute separation. By seamlessly connecting to your existing data lakes and supporting industry-standard APIs including OpenSearch, Elastic DQL, and our purpose-built Mach5 Query Language, we empower your team to extract actionable insights from unlimited data volumes—without compromise.
+        <p class="mt-4 md:mt-6 text-gray-100 text-sm leading-relaxed max-w-lg">
+          Analysis of event data is critical for security analytics, SIEM, observability, and APM applications, but legacy solutions have forced impossible tradeoffs between performance, scale, and cost. Mach5 Software breaks these constraints with our high-performance search and analytics platform.
+          
+          Our solution, Mach5 Search, delivers unmatched query speeds while dramatically reducing infrastructure costs through intelligent storage-compute separation. By seamlessly connecting to your existing data lakes and supporting industry-standard APIs including OpenSearch, Elastic DQL, and our purpose-built Mach5 Query Language, we empower your team to extract actionable insights from unlimited data volumes—without compromise.
         </p>
-        <button class="mt-6 px-5 py-2 bg-[#222222] text-white rounded hover:bg-gray-700 text-sm">
+        <button class="mt-4 md:mt-6 px-8 py-3 bg-[#222222]  text-white rounded hover:bg-gray-700 text-sm">
           Learn more
         </button>
       </div>
-  
-      <!-- Right: Image -->
-      <div class="flex justify-end pt-10">
-        <img 
-          src="assets/images/about-us-1.jpg" 
-          alt="Dashboard preview" 
+     
+      <div class="hidden md:flex justify-end pt-10">
+        <img
+          src="assets/images/about-us-1.jpg"
+          alt="Dashboard preview"
           class="rounded-lg shadow-lg w-[381px] max-h-[500px] object-cover"
         />
       </div>
       
     </div>
-  </section>
+  </div>
+</section>
   
 
 
-  <section class="max-w-6xl mx-auto px-4 py-16 bg-[#222222] font-grotesk">
-    <h2 class="text-3xl font-bold text-center mb-12 text-white font-grotesk">Meet the Mach5 Team</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+<section class="max-w-6xl mx-auto px-4 py-16 bg-[#222222] font-grotesk overflow-hidden">
+  <h2 class="text-3xl font-bold text-center mb-12 text-white font-grotesk">Meet the Mach5 Team</h2>
+  
+  <!-- Scrollable Container -->
+  <div class="relative pl-4">
+      <div class="snap-x snap-mandatory overflow-x-auto pb-8 -mx-4 px-4 flex md:grid md:grid-cols-3 gap-8 scrollbar-hide">
+          <!-- Team Member Cards -->
+          <div class="snap-start flex-shrink-0 w-[80vw] sm:w-[40vw] md:w-auto">
+              <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
+              <div class="text-left px-1">
+                  <p class="font-semibold text-white">Name 1</p>
+                  <p class="text-sm text-gray-400">Role</p>
+                  <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+              </div>
+          </div>
+          
+          <div class="snap-start flex-shrink-0 w-[80vw] sm:w-[40vw] md:w-auto">
+              <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
+              <div class="text-left px-1">
+                  <p class="font-semibold text-white">Name 2</p>
+                  <p class="text-sm text-gray-400">Role</p>
+                  <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+              </div>
+          </div>
+          
+          <div class="snap-start flex-shrink-0 w-[80vw] sm:w-[40vw] md:w-auto">
+              <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
+              <div class="text-left px-1">
+                  <p class="font-semibold text-white">Name 3</p>
+                  <p class="text-sm text-gray-400">Role</p>
+                  <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+              </div>
+          </div>
+          
+          <div class="snap-start flex-shrink-0 w-[80vw] sm:w-[40vw] md:w-auto">
+              <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
+              <div class="text-left px-1">
+                  <p class="font-semibold text-white">Name 4</p>
+                  <p class="text-sm text-gray-400">Role</p>
+                  <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+              </div>
+          </div>
+          
+          <div class="snap-start flex-shrink-0 w-[80vw] sm:w-[40vw] md:w-auto">
+              <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
+              <div class="text-left px-1">
+                  <p class="font-semibold text-white">Name 5</p>
+                  <p class="text-sm text-gray-400">Role</p>
+                  <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+              </div>
+          </div>
+          
+          <div class="snap-start flex-shrink-0 w-[80vw] sm:w-[40vw] md:w-auto">
+              <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
+              <div class="text-left px-1">
+                  <p class="font-semibold text-white">Name 6</p>
+                  <p class="text-sm text-gray-400">Role</p>
+                  <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+              </div>
+          </div>
+      </div>
       
-      <!-- Team Member Card -->
-      <div>
-        <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
-        <div class="text-left px-1">
-          <p class="font-semibold text-white">Name 1</p>
-          <p class="text-sm text-gray-400">Role</p>
-          <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
+      <!-- Dots Indicator -->
+      <div class="flex justify-center gap-2 mt-6 md:hidden">
+          <div class="h-2 w-2 rounded-full bg-gray-600 dot-indicator"></div>
+          <div class="h-2 w-2 rounded-full bg-gray-600 dot-indicator"></div>
+          <div class="h-2 w-2 rounded-full bg-gray-600 dot-indicator"></div>
+          <div class="h-2 w-2 rounded-full bg-gray-600 dot-indicator"></div>
+          <div class="h-2 w-2 rounded-full bg-gray-600 dot-indicator"></div>
+          <div class="h-2 w-2 rounded-full bg-gray-600 dot-indicator"></div>
+      </div>
+  </div>
+</section>
 
-        </div>
-      </div>
-  
-      <div>
-        <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
-        <div class="text-left px-1">
-          <p class="font-semibold text-white">Name 1</p>
-          <p class="text-sm text-gray-400">Role</p>
-          <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
-        </div>
-      </div>
-  
-      <div>
-        <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
-        <div class="text-left px-1">
-          <p class="font-semibold text-white">Name 1</p>
-          <p class="text-sm text-gray-400">Role</p>
-          <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
-        </div>
-      </div>
-  
-      <div>
-        <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
-        <div class="text-left px-1">
-          <p class="font-semibold text-white">Name 1</p>
-          <p class="text-sm text-gray-400">Role</p>
-          <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
-        </div>
-      </div>
-  
-      <div>
-        <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
-        <div class="text-left px-1">
-          <p class="font-semibold text-white">Name 1</p>
-          <p class="text-sm text-gray-400">Role</p>
-          <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
-        </div>
-      </div>
-  
-      <div>
-        <img src="assets/images/employee.png" alt="Team Member" class="rounded-md w-full h-auto mb-2">
-        <div class="text-left px-1">
-          <p class="font-semibold text-white">Name 1</p>
-          <p class="text-sm text-gray-400">Role</p>
-          <a href="#" class="text-[#FF5C1B] font-extrabold text-xl mt-1 inline-block">in</a>
-        </div>
-      </div>
-  
-    </div>
-  </section>
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+  }
+  .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+  }
+</style>
 
-  <section class="bg-[#222222] text-white py-16 px-1">
-    <div class="max-w-6xl mx-auto">
-        <!-- Section header -->
-        <div class="text-center mb-10">
-            <h2 class="font-bold text-3xl inline-block">
-                <span 
-                    class="text-transparent bg-clip-text"
-                    style="background-image: linear-gradient(to right, #FF5C1B 0%, #FFA581 22%, #FF5C1B 33%);"
-                >
-                    Talk to our team to learn more <i class="fas fa-arrow-right text-2xl"></i>
-                </span>
-            </h2>
-        </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const container = document.querySelector('.snap-x');
+      const dots = document.querySelectorAll('.dot-indicator');
+      
+      container.addEventListener('scroll', function() {
+          const scrollPosition = container.scrollLeft;
+          const cardWidth = container.firstElementChild.offsetWidth + 32; // card width + gap
+          const activeIndex = Math.round(scrollPosition / cardWidth);
+          
+          dots.forEach((dot, index) => {
+              if (index === activeIndex) {
+                  dot.classList.remove('bg-gray-600');
+                  dot.classList.add('bg-[#FF5C1B]');
+              } else {
+                  dot.classList.remove('bg-[#FF5C1B]');
+                  dot.classList.add('bg-gray-600');
+              }
+          });
+      });
+  });
+</script>
+<section class="bg-[#222222] text-white py-8 sm:py-12 md:py-16 px-4">
+  <div class="max-w-6xl mx-auto">
+      <!-- Section header -->
+      <div class="text-center mb-6 sm:mb-8 md:mb-10">
+          <h2 class="font-bold text-2xl sm:text-3xl inline-block">
+              <span 
+                  class="text-transparent bg-clip-text"
+                  style="background-image: linear-gradient(to right, #FF5C1B 0%, #FFA581 22%, #FF5C1B 33%);"
+              >
+                  Talk to our team to learn more <i class="fas fa-arrow-right text-xl sm:text-2xl align-middle ml-1"></i>
+              </span>
+          </h2>
+      </div>
 
-        <!-- Rest of your content remains the same -->
-        <div class="bg-[#1B1B1B] p-6 md:p-8 rounded-md flex flex-col md:flex-row gap-6 items-start border-2 border-gray-600">
-            <div class="flex items-start gap-6">
-                <!-- Image section -->
-                <div class="flex-shrink-0 relative">
-                    <img src="assets/images/image.png" alt="Profile" class="rounded-md w-[159px] h-[192px] object-cover" />
-                    <!-- Decorative orange background block -->
-                    <div class="absolute -bottom-2 -left-2 w-6 h-6 bg-[#FF5C1B] z-[-1] rounded-md"></div>
-                </div>
-                
-                <!-- Text content -->
-                <div class="flex-1 text-[13px] leading-[1.5] text-gray-300 mt-1 flex flex-col justify-between min-h-[200px]">
-                    <!-- Top section with SVG and text -->
-                    <div class="flex items-start gap-3">
-                        <!-- Left SVG (now part of flex flow, not absolute) -->
-                        <span class="text-orange-500 text-xl flex-shrink-0">
-                            <svg width="17" height="31" viewBox="0 0 17 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 30.6509L0.00019455 30.6509L0.00019455 13.634L6.8172 -2.47955e-05H15.2915L8.50864 13.634H17L17 30.6509Z" fill="#FF5C1B"/>
-                            </svg>
+      <!-- Content card with responsive layout -->
+      <div class="bg-[#1B1B1B] p-4 sm:p-6 md:p-8 rounded-md flex flex-col md:flex-row gap-4 sm:gap-6 items-start border-2 border-gray-600">
+          <!-- Responsive image and text container -->
+          <div class="flex flex-col sm:flex-row w-full gap-4 sm:gap-6 items-center sm:items-start">
+              <!-- Image section with responsive sizing -->
+              <div class="flex-shrink-0 relative mx-auto sm:mx-0 mb-4 sm:mb-0">
+                  <img src="assets/images/image.png" alt="Profile" class="rounded-md w-[120px] sm:w-[140px] md:w-[159px] h-auto aspect-[159/192] object-cover" />
+                  <!-- Decorative orange background block -->
+                  <div class="absolute -bottom-2 -left-2 w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 bg-[#FF5C1B] z-[-1] rounded-md"></div>
+              </div>
+              
+              <!-- Text content with responsive spacing -->
+              <div class="flex-1 text-[13px] leading-[1.5] text-gray-300 flex flex-col justify-between min-h-0 sm:min-h-[180px] md:min-h-[200px] w-full">
+                  <!-- Top section with SVG and text -->
+                  <div class="flex items-start gap-2 sm:gap-3">
+                      <!-- Left SVG with responsive sizing -->
+                      <span class="text-orange-500 text-lg sm:text-xl flex-shrink-0 hidden sm:block">
+                          <svg width="17" height="31" viewBox="0 0 17 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-3 md:w-4 h-auto">
+                              <path d="M17 30.6509L0.00019455 30.6509L0.00019455 13.634L6.8172 -2.47955e-05H15.2915L8.50864 13.634H17L17 30.6509Z" fill="#FF5C1B"/>
+                          </svg>
+                      </span>
+                      
+                      <!-- Text content with responsive font sizes -->
+                      <p class="text-base sm:text-lg md:text-xl text-left mt-0 flex-grow text-gray-400">
+                          By adopting Mach5, Permiso streamlined its data infrastructure, allowing all raw and processed event data to be stored in a single, centralized event store. This enabled multiple security analytics use cases without the need to constantly rethink infrastructure.
+                      </p>
+                  </div>
+              
+                  <!-- Bottom section with responsive alignment -->
+                  <div class="flex justify-between items-end mt-4 sm:mt-auto mb-1 sm:mb-3">
+                      <!-- Button with responsive sizing -->
+                      <button class="relative bg-[#222222] text-white text-xs py-2 sm:py-[13px] px-3 sm:px-[16px] transition-all duration-200 overflow-hidden group" style="border-radius: 10px">
+                        <!-- Gradient border background -->
+                        <span class="absolute inset-0 p-[1px]" style="border-radius: 10px">
+                          <span class="absolute inset-0 bg-gradient-to-b from-[#5B5B5B] to-[#3F3F3F]" style="border-radius: 9px"></span>
                         </span>
-                        
-                        <!-- Text content -->
-                        <p class="text-xl text-left mt-0 flex-grow text-gray-400">
-                            By adopting Mach5, Permiso streamlined its data infrastructure, allowing all raw and processed event data to be stored in a single, centralized event store. This enabled multiple security analytics use cases without the need to constantly rethink infrastructure.
-                        </p>
-                    </div>
-                
-                    <!-- Bottom section -->
-                    <div class="flex justify-between items-end mt-auto mb-3">
-                        <!-- Button in bottom-left -->
-                        <button class="relative bg-[#222222] text-white text-xs py-[13px] px-[16px] transition-all duration-200 overflow-hidden group" style="border-radius: 10px">
-                          <!-- Gradient border background -->
-                          <span class="absolute inset-0 p-[1px]" style="border-radius: 10px">
-                            <span class="absolute inset-0 bg-gradient-to-b from-[#5B5B5B] to-[#3F3F3F]" style="border-radius: 9px"></span>
-                          </span>
-                          <!-- Background overlay with hover effect -->
-                          <span class="absolute inset-0  bg-[#222222] group-hover:bg-[#2a2a2a] transition-all duration-200 m-[1px]" style="border-radius: 9px"></span>
-                          <!-- Button text -->
-                          <span class="relative z-10 text-[#FEFEFE]">Get to know more</span>
-                        </button>
-                        
-                        <!-- Bottom-right SVG -->
-                        <span class="text-orange-500 text-xl">
-                            <svg width="17" height="31" viewBox="0 0 17 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 0.349121H16.9998V17.366L10.1828 31H1.70852L8.49136 17.366H0V0.349121Z" fill="#FF5C1B"/>
-                            </svg>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                        <!-- Background overlay with hover effect -->
+                        <span class="absolute inset-0 bg-[#222222] group-hover:bg-[#2a2a2a] transition-all duration-200 m-[1px]" style="border-radius: 9px"></span>
+                        <!-- Button text -->
+                        <span class="relative z-10 text-[#FEFEFE] whitespace-nowrap">Get to know more</span>
+                      </button>
+                      
+                      <!-- Bottom-right SVG with responsive visibility -->
+                      <span class="text-orange-500 text-lg sm:text-xl hidden sm:block">
+                          <svg width="17" height="31" viewBox="0 0 17 31" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-3 md:w-4 h-auto">
+                              <path d="M0 0.349121H16.9998V17.366L10.1828 31H1.70852L8.49136 17.366H0V0.349121Z" fill="#FF5C1B"/>
+                          </svg>
+                      </span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </section>
 
 
-    <section class="max-w-6xl mx-auto px-4 py-10 bg-[#222222] text-white font-grotesk">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-5">Mach5 by numbers</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-        <!-- First Row -->
-        <!-- Funding (Medium width) -->
-        <div class="bg-[#1B1B1B] bg-opacity-100 rounded-lg p-5 md:col-span-4">
-          <div class="flex items-start">
-            <div class="bg-[#2F3033] p-4 rounded-lg mr-4">
-              <svg width="30" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 1.66699V28.3337M16.6667 5.66699H6.66667C5.42899 5.66699 4.24201 6.15866 3.36684 7.03383C2.49167 7.909 2 9.09598 2 10.3337C2 11.5713 2.49167 12.7583 3.36684 13.6335C4.24201 14.5087 5.42899 15.0003 6.66667 15.0003H13.3333C14.571 15.0003 15.758 15.492 16.6332 16.3672C17.5083 17.2423 18 18.4293 18 19.667C18 20.9047 17.5083 22.0917 16.6332 22.9668C15.758 23.842 14.571 24.3337 13.3333 24.3337H2" stroke="#FF5C1B" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                
-            </div>
-            <div>
-              <p class="text-sm text-gray-400">Funding till date</p>
-              <p class="text-2xl font-bold mt-2">31.8M USD</p>
-            </div>
-          </div>
+<!-- Mach5 by numbers section -->
+<section class="max-w-6xl mx-auto px-4 py-10 bg-[#222222] text-white font-grotesk">
+  <h2 class="text-3xl md:text-4xl font-bold text-center mb-5 md:mb-8">Mach5 by numbers</h2>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 md:gap-4">
+    <!-- First Row -->
+    <!-- Funding (Medium width) -->
+    <div class="bg-[#1B1B1B] bg-opacity-100 rounded-lg p-4 md:p-5 sm:col-span-1 lg:col-span-4">
+      <div class="flex items-start">
+        <div class="bg-[#2F3033] p-3 md:p-4 rounded-lg mr-3 md:mr-4 flex-shrink-0">
+          <svg width="24" height="24" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-7 md:h-7">
+            <path d="M10 1.66699V28.3337M16.6667 5.66699H6.66667C5.42899 5.66699 4.24201 6.15866 3.36684 7.03383C2.49167 7.909 2 9.09598 2 10.3337C2 11.5713 2.49167 12.7583 3.36684 13.6335C4.24201 14.5087 5.42899 15.0003 6.66667 15.0003H13.3333C14.571 15.0003 15.758 15.492 16.6332 16.3672C17.5083 17.2423 18 18.4293 18 19.667C18 20.9047 17.5083 22.0917 16.6332 22.9668C15.758 23.842 14.571 24.3337 13.3333 24.3337H2" stroke="#FF5C1B" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
-        
-        <!-- Founded in (Narrow width) -->
-        <div class="bg-[#1B1B1B] bg-opacity-100 rounded-lg p-5 md:col-span-4">
-          <div class="flex items-start">
-            <div class="bg-[#2F3033] p-4 rounded-lg mr-4">
-              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 13H2.33333M13 1V2.33333M23.6667 13H25M4.46667 4.46667L5.4 5.4M21.5333 4.46667L20.6 5.4M9.93333 19.6667H16.0667M9 18.3333C7.88063 17.4938 7.05378 16.3234 6.63658 14.9878C6.21938 13.6522 6.23297 12.2192 6.67545 10.8918C7.11792 9.5644 7.96683 8.40986 9.10193 7.59172C10.237 6.77358 11.6008 6.33333 13 6.33333C14.3992 6.33333 15.763 6.77358 16.8981 7.59172C18.0332 8.40986 18.8821 9.5644 19.3246 10.8918C19.767 12.2192 19.7806 13.6522 19.3634 14.9878C18.9462 16.3234 18.1194 17.4938 17 18.3333C16.4794 18.8486 16.0875 19.4793 15.8558 20.1742C15.6242 20.8691 15.5594 21.6087 15.6667 22.3333C15.6667 23.0406 15.3857 23.7189 14.8856 24.219C14.3855 24.719 13.7072 25 13 25C12.2928 25 11.6145 24.719 11.1144 24.219C10.6143 23.7189 10.3333 23.0406 10.3333 22.3333C10.4406 21.6087 10.3758 20.8691 10.1442 20.1742C9.91254 19.4793 9.52058 18.8486 9 18.3333Z" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                
-            </div>
-            <div>
-              <p class="text-sm text-gray-400">Founded in</p>
-              <p class="text-2xl font-bold mt-2">2020</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Team size (Wide width) -->
-        <div class="bg-[#1B1B1B] bg-opacity-100 rounded-lg p-5 md:col-span-4">
-          <div class="flex items-start">
-            <div class="bg-[#2F3033] p-4 rounded-lg mr-4">
-              <svg width="30" height="30" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10.004 3.99991C10.004 2.9401 10.425 1.9237 11.1744 1.17431C11.9238 0.424912 12.9402 0.00390625 14 0.00390625C15.0598 0.00390625 16.0762 0.424912 16.8256 1.17431C17.575 1.9237 17.996 2.9401 17.996 3.99991C17.996 5.05971 17.575 6.07611 16.8256 6.8255C16.0762 7.5749 15.0598 7.99591 14 7.99591C12.9402 7.99591 11.9238 7.5749 11.1744 6.8255C10.425 6.07611 10.004 5.05971 10.004 3.99991ZM14 2.00391C13.7379 2.00391 13.4783 2.05553 13.2362 2.15584C12.994 2.25615 12.774 2.40318 12.5886 2.58852C12.4033 2.77387 12.2562 2.9939 12.1559 3.23607C12.0556 3.47824 12.004 3.73779 12.004 3.99991C12.004 4.26202 12.0556 4.52158 12.1559 4.76374C12.2562 5.00591 12.4033 5.22595 12.5886 5.41129C12.774 5.59664 12.994 5.74366 13.2362 5.84397C13.4783 5.94428 13.7379 5.99591 14 5.99591C14.5294 5.99591 15.0371 5.78561 15.4114 5.41129C15.7857 5.03697 15.996 4.52928 15.996 3.99991C15.996 3.47053 15.7857 2.96284 15.4114 2.58852C15.0371 2.2142 14.5294 2.00391 14 2.00391ZM20 4.99991C20 4.60594 20.0776 4.21583 20.2284 3.85186C20.3791 3.48788 20.6001 3.15716 20.8787 2.87859C21.1573 2.60001 21.488 2.37903 21.8519 2.22827C22.2159 2.0775 22.606 1.99991 23 1.99991C23.394 1.99991 23.7841 2.0775 24.1481 2.22827C24.512 2.37903 24.8427 2.60001 25.1213 2.87859C25.3999 3.15716 25.6209 3.48788 25.7716 3.85186C25.9224 4.21583 26 4.60594 26 4.99991C26 5.79556 25.6839 6.55862 25.1213 7.12123C24.5587 7.68384 23.7956 7.99991 23 7.99991C22.2044 7.99991 21.4413 7.68384 20.8787 7.12123C20.3161 6.55862 20 5.79556 20 4.99991ZM23 3.99991C22.7348 3.99991 22.4804 4.10526 22.2929 4.2928C22.1054 4.48034 22 4.73469 22 4.99991C22 5.26512 22.1054 5.51948 22.2929 5.70701C22.4804 5.89455 22.7348 5.99991 23 5.99991C23.2652 5.99991 23.5196 5.89455 23.7071 5.70701C23.8946 5.51948 24 5.26512 24 4.99991C24 4.73469 23.8946 4.48034 23.7071 4.2928C23.5196 4.10526 23.2652 3.99991 23 3.99991ZM5 1.99991C4.20435 1.99991 3.44129 2.31598 2.87868 2.87859C2.31607 3.4412 2 4.20426 2 4.99991C2 5.79556 2.31607 6.55862 2.87868 7.12123C3.44129 7.68384 4.20435 7.99991 5 7.99991C5.79565 7.99991 6.55871 7.68384 7.12132 7.12123C7.68393 6.55862 8 5.79556 8 4.99991C8 4.20426 7.68393 3.4412 7.12132 2.87859C6.55871 2.31598 5.79565 1.99991 5 1.99991ZM4 4.99991C4 4.73469 4.10536 4.48034 4.29289 4.2928C4.48043 4.10526 4.73478 3.99991 5 3.99991C5.26522 3.99991 5.51957 4.10526 5.70711 4.2928C5.89464 4.48034 6 4.73469 6 4.99991C6 5.26512 5.89464 5.51948 5.70711 5.70701C5.51957 5.89455 5.26522 5.99991 5 5.99991C4.73478 5.99991 4.48043 5.89455 4.29289 5.70701C4.10536 5.51948 4 5.26512 4 4.99991ZM6.536 9.99991C6.18489 10.608 6.00003 11.2978 6 11.9999H2V16.9999C1.99984 17.4974 2.12339 17.9871 2.35953 18.4249C2.59568 18.8628 2.937 19.2351 3.35278 19.5082C3.76855 19.7814 4.24573 19.9468 4.74135 19.9897C5.23697 20.0326 5.73548 19.9516 6.192 19.7539C6.34 20.4159 6.572 21.0479 6.872 21.6379C6.11293 21.9444 5.29022 22.0598 4.47611 21.974C3.66201 21.8883 2.88142 21.6039 2.20288 21.146C1.52435 20.688 0.968639 20.0705 0.584546 19.3476C0.200452 18.6247 -0.000272096 17.8185 2.76826e-07 16.9999V11.9999C2.76826e-07 11.4695 0.210714 10.9608 0.585787 10.5857C0.960859 10.2106 1.46957 9.99991 2 9.99991H6.536ZM21.128 21.6379C21.8871 21.9444 22.7098 22.0598 23.5239 21.974C24.338 21.8883 25.1186 21.6039 25.7971 21.146C26.4756 20.688 27.0314 20.0705 27.4155 19.3476C27.7995 18.6247 28.0003 17.8185 28 16.9999V11.9999C28 11.4695 27.7893 10.9608 27.4142 10.5857C27.0391 10.2106 26.5304 9.99991 26 9.99991H21.464C21.804 10.5879 22 11.2699 22 11.9999H26V16.9999C26.0002 17.4974 25.8766 17.9871 25.6405 18.4249C25.4043 18.8628 25.063 19.2351 24.6472 19.5082C24.2314 19.7814 23.7543 19.9468 23.2586 19.9897C22.763 20.0326 22.2645 19.9516 21.808 19.7539C21.656 20.4179 21.4293 21.0459 21.128 21.6379ZM10 9.99791C9.46957 9.99791 8.96086 10.2086 8.58579 10.5837C8.21071 10.9588 8 11.4675 8 11.9979V17.9999C8 19.5912 8.63214 21.1173 9.75736 22.2425C10.8826 23.3678 12.4087 23.9999 14 23.9999C15.5913 23.9999 17.1174 23.3678 18.2426 22.2425C19.3679 21.1173 20 19.5912 20 17.9999V11.9999C20 11.4695 19.7893 10.9608 19.4142 10.5857C19.0391 10.2106 18.5304 9.99991 18 9.99991L10 9.99791ZM10 11.9979H18V17.9999C18 19.0608 17.5786 20.0782 16.8284 20.8283C16.0783 21.5785 15.0609 21.9999 14 21.9999C12.9391 21.9999 11.9217 21.5785 11.1716 20.8283C10.4214 20.0782 10 19.0608 10 17.9999V11.9979Z" fill="#FF5C1B"/>
-                </svg>
-                
-            </div>
-            <div>
-              <p class="text-sm text-gray-400">Team size</p>
-              <p class="text-2xl font-bold mt-2">200+</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Second Row -->
-        <!-- Supported Compliance (Very wide) -->
-        <div class="bg-[#1B1B1B] bg-opacity-100 rounded-lg p-5 md:col-span-4">
-          <div class="flex items-start">
-            <div class="bg-[#2F3033] p-4 rounded-lg mr-4">
-              <svg width="30" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.6357 16.1875L16.6557 27.5555C16.6783 27.6894 16.6595 27.8269 16.6018 27.9498C16.5442 28.0727 16.4503 28.1751 16.3329 28.2432C16.2155 28.3114 16.0801 28.342 15.9447 28.3311C15.8094 28.3202 15.6807 28.2682 15.5757 28.1822L10.8023 24.5995C10.5719 24.4273 10.292 24.3343 10.0043 24.3343C9.7167 24.3343 9.43677 24.4273 9.20634 24.5995L4.425 28.1808C4.3201 28.2667 4.19148 28.3186 4.05633 28.3296C3.92117 28.3405 3.7859 28.3099 3.66855 28.242C3.55121 28.174 3.45737 28.0719 3.39956 27.9493C3.34175 27.8266 3.32272 27.6893 3.345 27.5555L5.36367 16.1875" stroke="#FF5C1B" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 17.667C14.4183 17.667 18 14.0853 18 9.66699C18 5.24871 14.4183 1.66699 10 1.66699C5.58172 1.66699 2 5.24871 2 9.66699C2 14.0853 5.58172 17.667 10 17.667Z" stroke="#FF5C1B" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                
-            </div>
-            <div>
-              <p class="text-sm text-gray-400">Supported Compliance</p>
-              <p class="text-2xl font-bold mt-2">20+</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Audit Partners (Medium width) -->
-        <div class="bg-[#1B1B1B] bg-opacity-100 rounded-lg p-5 md:col-span-3">
-          <div class="flex items-start">
-            <div class="bg-[#2F3033] p-4 rounded-lg mr-4">
-              <svg width="30" height="30" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15.0003 22.6663L23.0003 14.6663L20.3337 17.333L17.667 19.9997L15.0003 22.6663ZM15.0003 22.6663L1.66699 9.33301L9.66699 1.33301L15.0003 6.66634" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10.334 11.333L20.334 1.33301L28.334 9.33301L23.0007 14.6663L17.6673 9.33301L13.6673 13.333L10.334 11.333ZM10.334 11.333L15.0007 6.66634M17.6673 19.9997L15.6673 17.9997M20.334 17.333L18.334 15.333" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                
-                
-            </div>
-            <div>
-              <p class="text-sm text-gray-400">Audit Partners</p>
-              <p class="text-2xl font-bold mt-2">40+</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Global Reach (Narrow width) -->
-        <div class="bg-[#1B1B1B] bg-opacity-100 rounded-lg p-5 md:col-span-5">
-          <div class="flex items-start">
-            <div class="bg-[#2F3033] p-4 rounded-lg mr-4">
-              <svg width="30" height="30" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.82667 7.20933C5.57733 7.91333 6.02133 10.9507 7.096 12.3693C8.52267 14.2533 9.86267 14.0067 11.352 15.8947C13.7587 18.9467 13.1013 23.5013 13.1013 24.8347M23.6667 17H22.3333C20.9188 17 19.5623 17.5619 18.5621 18.5621C17.5619 19.5623 17 20.9188 17 22.3333V23.6667M8.44933 2.32267C8.44933 3.41867 8.59867 4.83733 10.4693 5.76267C12.3387 6.68667 14.36 6.23067 14.36 8.87467C14.36 9.24267 14.36 11.552 16.9893 11.552C19.6907 11.5933 19.6907 9.31467 19.6907 8.87467C19.6907 8.008 20.3933 7.67467 21.26 7.67467H23.6667M25 13C25 14.5759 24.6896 16.1363 24.0866 17.5922C23.4835 19.0481 22.5996 20.371 21.4853 21.4853C20.371 22.5996 19.0481 23.4835 17.5922 24.0866C16.1363 24.6896 14.5759 25 13 25C11.4241 25 9.86371 24.6896 8.4078 24.0866C6.95189 23.4835 5.62902 22.5996 4.51472 21.4853C3.40042 20.371 2.5165 19.0481 1.91345 17.5922C1.31039 16.1363 1 14.5759 1 13C1 9.8174 2.26428 6.76516 4.51472 4.51472C6.76516 2.26428 9.8174 1 13 1C16.1826 1 19.2348 2.26428 21.4853 4.51472C23.7357 6.76516 25 9.8174 25 13Z" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                
-            </div>
-            <div>
-              <p class="text-sm text-gray-400">Global Reach</p>
-              <p class="text-2xl font-bold mt-2">75+ Countries</p>
-            </div>
-          </div>
+        <div>
+          <p class="text-xs md:text-sm text-gray-400">Funding till date</p>
+          <p class="text-xl md:text-2xl font-bold mt-1 md:mt-2">31.8M USD</p>
         </div>
       </div>
-    </section>
+    </div>
+    
+    <!-- Founded in (Narrow width) -->
+    <div class="bg-[#1B1B1B] bg-opacity-100 rounded-lg p-4 md:p-5 sm:col-span-1 lg:col-span-4">
+      <div class="flex items-start">
+        <div class="bg-[#2F3033] p-3 md:p-4 rounded-lg mr-3 md:mr-4 flex-shrink-0">
+          <svg width="24" height="24" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-7 md:h-7">
+            <path d="M1 13H2.33333M13 1V2.33333M23.6667 13H25M4.46667 4.46667L5.4 5.4M21.5333 4.46667L20.6 5.4M9.93333 19.6667H16.0667M9 18.3333C7.88063 17.4938 7.05378 16.3234 6.63658 14.9878C6.21938 13.6522 6.23297 12.2192 6.67545 10.8918C7.11792 9.5644 7.96683 8.40986 9.10193 7.59172C10.237 6.77358 11.6008 6.33333 13 6.33333C14.3992 6.33333 15.763 6.77358 16.8981 7.59172C18.0332 8.40986 18.8821 9.5644 19.3246 10.8918C19.767 12.2192 19.7806 13.6522 19.3634 14.9878C18.9462 16.3234 18.1194 17.4938 17 18.3333C16.4794 18.8486 16.0875 19.4793 15.8558 20.1742C15.6242 20.8691 15.5594 21.6087 15.6667 22.3333C15.6667 23.0406 15.3857 23.7189 14.8856 24.219C14.3855 24.719 13.7072 25 13 25C12.2928 25 11.6145 24.719 11.1144 24.219C10.6143 23.7189 10.3333 23.0406 10.3333 22.3333C10.4406 21.6087 10.3758 20.8691 10.1442 20.1742C9.91254 19.4793 9.52058 18.8486 9 18.3333Z" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs md:text-sm text-gray-400">Founded in</p>
+          <p class="text-xl md:text-2xl font-bold mt-1 md:mt-2">2020</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Team size (Wide width) -->
+    <div class="bg-[#1B1B1B] bg-opacity-100 rounded-lg p-4 md:p-5 sm:col-span-2 lg:col-span-4">
+      <div class="flex items-start">
+        <div class="bg-[#2F3033] p-3 md:p-4 rounded-lg mr-3 md:mr-4 flex-shrink-0">
+          <svg width="24" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-7 md:h-7">
+            <path d="M10.004 3.99991C10.004 2.9401 10.425 1.9237 11.1744 1.17431C11.9238 0.424912 12.9402 0.00390625 14 0.00390625C15.0598 0.00390625 16.0762 0.424912 16.8256 1.17431C17.575 1.9237 17.996 2.9401 17.996 3.99991C17.996 5.05971 17.575 6.07611 16.8256 6.8255C16.0762 7.5749 15.0598 7.99591 14 7.99591C12.9402 7.99591 11.9238 7.5749 11.1744 6.8255C10.425 6.07611 10.004 5.05971 10.004 3.99991ZM14 2.00391C13.7379 2.00391 13.4783 2.05553 13.2362 2.15584C12.994 2.25615 12.774 2.40318 12.5886 2.58852C12.4033 2.77387 12.2562 2.9939 12.1559 3.23607C12.0556 3.47824 12.004 3.73779 12.004 3.99991C12.004 4.26202 12.0556 4.52158 12.1559 4.76374C12.2562 5.00591 12.4033 5.22595 12.5886 5.41129C12.774 5.59664 12.994 5.74366 13.2362 5.84397C13.4783 5.94428 13.7379 5.99591 14 5.99591C14.5294 5.99591 15.0371 5.78561 15.4114 5.41129C15.7857 5.03697 15.996 4.52928 15.996 3.99991C15.996 3.47053 15.7857 2.96284 15.4114 2.58852C15.0371 2.2142 14.5294 2.00391 14 2.00391ZM20 4.99991C20 4.60594 20.0776 4.21583 20.2284 3.85186C20.3791 3.48788 20.6001 3.15716 20.8787 2.87859C21.1573 2.60001 21.488 2.37903 21.8519 2.22827C22.2159 2.0775 22.606 1.99991 23 1.99991C23.394 1.99991 23.7841 2.0775 24.1481 2.22827C24.512 2.37903 24.8427 2.60001 25.1213 2.87859C25.3999 3.15716 25.6209 3.48788 25.7716 3.85186C25.9224 4.21583 26 4.60594 26 4.99991C26 5.79556 25.6839 6.55862 25.1213 7.12123C24.5587 7.68384 23.7956 7.99991 23 7.99991C22.2044 7.99991 21.4413 7.68384 20.8787 7.12123C20.3161 6.55862 20 5.79556 20 4.99991ZM23 3.99991C22.7348 3.99991 22.4804 4.10526 22.2929 4.2928C22.1054 4.48034 22 4.73469 22 4.99991C22 5.26512 22.1054 5.51948 22.2929 5.70701C22.4804 5.89455 22.7348 5.99991 23 5.99991C23.2652 5.99991 23.5196 5.89455 23.7071 5.70701C23.8946 5.51948 24 5.26512 24 4.99991C24 4.73469 23.8946 4.48034 23.7071 4.2928C23.5196 4.10526 23.2652 3.99991 23 3.99991ZM5 1.99991C4.20435 1.99991 3.44129 2.31598 2.87868 2.87859C2.31607 3.4412 2 4.20426 2 4.99991C2 5.79556 2.31607 6.55862 2.87868 7.12123C3.44129 7.68384 4.20435 7.99991 5 7.99991C5.79565 7.99991 6.55871 7.68384 7.12132 7.12123C7.68393 6.55862 8 5.79556 8 4.99991C8 4.20426 7.68393 3.4412 7.12132 2.87859C6.55871 2.31598 5.79565 1.99991 5 1.99991ZM4 4.99991C4 4.73469 4.10536 4.48034 4.29289 4.2928C4.48043 4.10526 4.73478 3.99991 5 3.99991C5.26522 3.99991 5.51957 4.10526 5.70711 4.2928C5.89464 4.48034 6 4.73469 6 4.99991C6 5.26512 5.89464 5.51948 5.70711 5.70701C5.51957 5.89455 5.26522 5.99991 5 5.99991C4.73478 5.99991 4.48043 5.89455 4.29289 5.70701C4.10536 5.51948 4 5.26512 4 4.99991ZM6.536 9.99991C6.18489 10.608 6.00003 11.2978 6 11.9999H2V16.9999C1.99984 17.4974 2.12339 17.9871 2.35953 18.4249C2.59568 18.8628 2.937 19.2351 3.35278 19.5082C3.76855 19.7814 4.24573 19.9468 4.74135 19.9897C5.23697 20.0326 5.73548 19.9516 6.192 19.7539C6.34 20.4159 6.572 21.0479 6.872 21.6379C6.11293 21.9444 5.29022 22.0598 4.47611 21.974C3.66201 21.8883 2.88142 21.6039 2.20288 21.146C1.52435 20.688 0.968639 20.0705 0.584546 19.3476C0.200452 18.6247 -0.000272096 17.8185 2.76826e-07 16.9999V11.9999C2.76826e-07 11.4695 0.210714 10.9608 0.585787 10.5857C0.960859 10.2106 1.46957 9.99991 2 9.99991H6.536ZM21.128 21.6379C21.8871 21.9444 22.7098 22.0598 23.5239 21.974C24.338 21.8883 25.1186 21.6039 25.7971 21.146C26.4756 20.688 27.0314 20.0705 27.4155 19.3476C27.7995 18.6247 28.0003 17.8185 28 16.9999V11.9999C28 11.4695 27.7893 10.9608 27.4142 10.5857C27.0391 10.2106 26.5304 9.99991 26 9.99991H21.464C21.804 10.5879 22 11.2699 22 11.9999H26V16.9999C26.0002 17.4974 25.8766 17.9871 25.6405 18.4249C25.4043 18.8628 25.063 19.2351 24.6472 19.5082C24.2314 19.7814 23.7543 19.9468 23.2586 19.9897C22.763 20.0326 22.2645 19.9516 21.808 19.7539C21.656 20.4179 21.4293 21.0459 21.128 21.6379ZM10 9.99791C9.46957 9.99791 8.96086 10.2086 8.58579 10.5837C8.21071 10.9588 8 11.4675 8 11.9979V17.9999C8 19.5912 8.63214 21.1173 9.75736 22.2425C10.8826 23.3678 12.4087 23.9999 14 23.9999C15.5913 23.9999 17.1174 23.3678 18.2426 22.2425C19.3679 21.1173 20 19.5912 20 17.9999V11.9999C20 11.4695 19.7893 10.9608 19.4142 10.5857C19.0391 10.2106 18.5304 9.99991 18 9.99991L10 9.99791ZM10 11.9979H18V17.9999C18 19.0608 17.5786 20.0782 16.8284 20.8283C16.0783 21.5785 15.0609 21.9999 14 21.9999C12.9391 21.9999 11.9217 21.5785 11.1716 20.8283C10.4214 20.0782 10 19.0608 10 17.9999V11.9979Z" fill="#FF5C1B"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs md:text-sm text-gray-400">Team size</p>
+          <p class="text-xl md:text-2xl font-bold mt-1 md:mt-2">200+</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Second Row -->
+    <!-- Supported Compliance (Very wide) -->
+    <div class="bg-[#1B1B1B] bg-opacity-100 rounded-lg p-4 md:p-5 sm:col-span-1 lg:col-span-4">
+      <div class="flex items-start">
+        <div class="bg-[#2F3033] p-3 md:p-4 rounded-lg mr-3 md:mr-4 flex-shrink-0">
+          <svg width="24" height="24" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-7 md:h-7">
+            <path d="M14.6357 16.1875L16.6557 27.5555C16.6783 27.6894 16.6595 27.8269 16.6018 27.9498C16.5442 28.0727 16.4503 28.1751 16.3329 28.2432C16.2155 28.3114 16.0801 28.342 15.9447 28.3311C15.8094 28.3202 15.6807 28.2682 15.5757 28.1822L10.8023 24.5995C10.5719 24.4273 10.292 24.3343 10.0043 24.3343C9.7167 24.3343 9.43677 24.4273 9.20634 24.5995L4.425 28.1808C4.3201 28.2667 4.19148 28.3186 4.05633 28.3296C3.92117 28.3405 3.7859 28.3099 3.66855 28.242C3.55121 28.174 3.45737 28.0719 3.39956 27.9493C3.34175 27.8266 3.32272 27.6893 3.345 27.5555L5.36367 16.1875" stroke="#FF5C1B" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 17.667C14.4183 17.667 18 14.0853 18 9.66699C18 5.24871 14.4183 1.66699 10 1.66699C5.58172 1.66699 2 5.24871 2 9.66699C2 14.0853 5.58172 17.667 10 17.667Z" stroke="#FF5C1B" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs md:text-sm text-gray-400">Supported Compliance</p>
+          <p class="text-xl md:text-2xl font-bold mt-1 md:mt-2">20+</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Audit Partners (Medium width) -->
+    <div class="bg-[#1B1B1B] bg-opacity-100 rounded-lg p-4 md:p-5 sm:col-span-1 lg:col-span-3">
+      <div class="flex items-start">
+        <div class="bg-[#2F3033] p-3 md:p-4 rounded-lg mr-3 md:mr-4 flex-shrink-0">
+          <svg width="24" height="24" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-7 md:h-7">
+            <path d="M15.0003 22.6663L23.0003 14.6663L20.3337 17.333L17.667 19.9997L15.0003 22.6663ZM15.0003 22.6663L1.66699 9.33301L9.66699 1.33301L15.0003 6.66634" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.334 11.333L20.334 1.33301L28.334 9.33301L23.0007 14.6663L17.6673 9.33301L13.6673 13.333L10.334 11.333ZM10.334 11.333L15.0007 6.66634M17.6673 19.9997L15.6673 17.9997M20.334 17.333L18.334 15.333" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs md:text-sm text-gray-400">Audit Partners</p>
+          <p class="text-xl md:text-2xl font-bold mt-1 md:mt-2">40+</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Global Reach (Narrow width) -->
+    <div class="bg-[#1B1B1B] bg-opacity-100 rounded-lg p-4 md:p-5 sm:col-span-2 lg:col-span-5">
+      <div class="flex items-start">
+        <div class="bg-[#2F3033] p-3 md:p-4 rounded-lg mr-3 md:mr-4 flex-shrink-0">
+          <svg width="24" height="24" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-7 md:h-7">
+            <path d="M2.82667 7.20933C5.57733 7.91333 6.02133 10.9507 7.096 12.3693C8.52267 14.2533 9.86267 14.0067 11.352 15.8947C13.7587 18.9467 13.1013 23.5013 13.1013 24.8347M23.6667 17H22.3333C20.9188 17 19.5623 17.5619 18.5621 18.5621C17.5619 19.5623 17 20.9188 17 22.3333V23.6667M8.44933 2.32267C8.44933 3.41867 8.59867 4.83733 10.4693 5.76267C12.3387 6.68667 14.36 6.23067 14.36 8.87467C14.36 9.24267 14.36 11.552 16.9893 11.552C19.6907 11.5933 19.6907 9.31467 19.6907 8.87467C19.6907 8.008 20.3933 7.67467 21.26 7.67467H23.6667M25 13C25 14.5759 24.6896 16.1363 24.0866 17.5922C23.4835 19.0481 22.5996 20.371 21.4853 21.4853C20.371 22.5996 19.0481 23.4835 17.5922 24.0866C16.1363 24.6896 14.5759 25 13 25C11.4241 25 9.86371 24.6896 8.4078 24.0866C6.95189 23.4835 5.62902 22.5996 4.51472 21.4853C3.40042 20.371 2.5165 19.0481 1.91345 17.5922C1.31039 16.1363 1 14.5759 1 13C1 9.8174 2.26428 6.76516 4.51472 4.51472C6.76516 2.26428 9.8174 1 13 1C16.1826 1 19.2348 2.26428 21.4853 4.51472C23.7357 6.76516 25 9.8174 25 13Z" stroke="#FF5C1B" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs md:text-sm text-gray-400">Global Reach</p>
+          <p class="text-xl md:text-2xl font-bold mt-1 md:mt-2">75+ Countries</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
     <section class="bg-[#222222] text-white py-16 font-grotesk">
@@ -466,7 +505,7 @@
         <h1 class="text-3xl sm:text-4xl font-bold text-white mb-10">
           Ready to move to a modern search and analytics platform 
         </h1>
-        <a href="#" class="inline-flex items-center text-sm font-bold font-grotesk bg-white text-orange-500 px-5 py-3 rounded-lg mb-8">
+        <a href="#" class="inline-flex items-center text-sm font-bold f bg-white text-orange-500 px-5 py-3 rounded-lg mb-8">
           Schedule a demo
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
