@@ -29,68 +29,75 @@
             }
         }
     </script>
+    <script>
+        function toggleMenu() {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        }
+      </script>
 </head>
 <body class="bg-[#222222] text-white">
     <!-- Navigation Bar -->
-    <section class="bg-[#222222] text-white overflow-x-auto">
-        <nav class="fixed w-full z-50 bg-dark border-none backdrop-blur-sm bg-opacity-70 overflow-x-hidden">
-          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex items-center justify-between">
-              <a href="index.html" class="flex items-center space-x-2">
-                <img src="https://imgs.search.brave.com/U8Gh_WPXBSBPpRiVrtuK9QXFM-xkMeNFd7DKOFWO1fQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vcGVu/c2VhcmNoLm9yZy9h/c3NldHMvbWVkaWEv/cGFydG5lcnMvbWFj/aDUvbWFjaDUtbG9n/by5wbmc"
-                     alt="Mach5 Logo" class="w-8 h-8 object-contain" />
-                <span class="text-2xl font-bold tracking-tight">Mach5</span>
-              </a>
-              <div class="hidden md:flex items-center space-x-8">
-                <a href="about.html" class="text-gray-400 hover:text-white text-sm font-medium">About us</a>
-                <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Platform</a>
-                <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Solutions</a>
-                <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Docs</a>
-                <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Resources</a>
-                <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Pricing</a>
-              </div>
-      
-              <div class="hidden md:block">
-                <button class="bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200 shadow-lg shadow-blue-600/20">
-                  Get started for free
-                </button>
-              </div>
-      
-              <div class="md:hidden">
-                <button onclick="toggleMenu()" class="text-gray-400 hover:text-white focus:outline-none">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
-              </div>
+    <nav class="fixed w-full z-50 bg-dark border-none backdrop-blur-sm bg-opacity-70 overflow-x-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-40 py-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <img src="https://imgs.search.brave.com/U8Gh_WPXBSBPpRiVrtuK9QXFM-xkMeNFd7DKOFWO1fQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vcGVu/c2VhcmNoLm9yZy9h/c3NldHMvbWVkaWEv/cGFydG5lcnMvbWFj/aDUvbWFjaDUtbG9n/by5wbmc"
+                   alt="Mach5 Logo" class="w-8 h-8 object-contain" />
+              <span class="text-2xl font-bold tracking-tight">Mach5</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="about.html" class="text-gray-400 hover:text-white text-sm font-medium">About us</a>
+              <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Platform</a>
+              <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Solutions</a>
+              <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Docs</a>
+              <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Resources</a>
+              <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Pricing</a>
             </div>
       
-            <div id="mobile-menu" class="md:hidden mt-4 space-y-4 hidden">
-              <a href="about.html" class="block text-gray-100 hover:text-white text-sm font-medium">About us</a>
-              <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Platform</a>
-              <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Solutions</a>
-              <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Docs</a>
-              <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Resources</a>
-              <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Pricing</a>
-              <button class="w-full bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200 shadow-md shadow-orange-600/20">
+            <div class="hidden md:block">
+              <button class="bg-primary  text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200 shadow-lg shadow-black-600/80">
                 Get started for free
               </button>
             </div>
+      
+      
+            <div class="md:hidden">
+              <button onclick="toggleMenu()" class="text-gray-400 hover:text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
           </div>
-        </nav>
-      </section>
+      
+      
+          <div id="mobile-menu" class="md:hidden mt-4 space-y-4 hidden">
+            <a href="about.html" class="block text-gray-100 hover:text-white text-sm font-medium">About us</a>
+            <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Platform</a>
+            <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Solutions</a>
+            <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Docs</a>
+            <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Resources</a>
+            <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Pricing</a>
+            <button class="w-full bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200">
+              Get started for free
+            </button>
+          </div>
+        </div>
+      </nav>
+      
     <!-- Hero Section with Contact Us -->
-    <section class="relative bg-[linear-gradient(to_top,_#FF5C1B_30%,_#222222_90%)] py-8">
-        <div class="container mx-auto px-4">
-            <h1 class="text-6xl font-bold text-center mb-10 mt-20">Contact us</h1>
+    <section class="relative bg-[linear-gradient(to_top,_#FF5C1B_30%,_#222222_90%)] py-8 sm:py-12 lg:py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl xs:text-5xl sm:text-6xl font-bold text-center mb-8 sm:mb-10 lg:mb-12 mt-12 sm:mt-16 lg:mt-20">Contact us</h1>
             
-            <div class="flex justify-center ">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-16">
+            <div class="flex justify-center">
+                <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
                     <!-- General Enquiries Card 1 -->
-                    <div class="bg-[#222222] rounded-[32px] p-12 h-[350px] w-[400px] ">
-                        <div class="flex items-center mb-4 ">
-                            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="bg-[#222222] rounded-3xl sm:rounded-[32px] p-6 sm:p-8 lg:p-10 xl:p-12 h-auto sm:h-[350px] w-full max-w-[400px] mx-auto sm:mx-0 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                        <div class="flex items-center mb-3 sm:mb-4">
+                            <svg width="36" height="36" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 sm:w-10 sm:h-10">
                                 <rect width="42" height="42" rx="12" fill="#2F3033"/>
                                 <g clip-path="url(#clip0_2079_8089)">
                                 <path d="M9 21.0821C9 22.658 9.31039 24.2184 9.91345 25.6743C10.5165 27.1302 11.4004 28.4531 12.5147 29.5674C13.629 30.6817 14.9519 31.5656 16.4078 32.1686C17.8637 32.7717 19.4241 33.0821 21 33.0821C22.5759 33.0821 24.1363 32.7717 25.5922 32.1686C27.0481 31.5656 28.371 30.6817 29.4853 29.5674C30.5996 28.4531 31.4835 27.1302 32.0866 25.6743C32.6896 24.2184 33 22.658 33 21.0821C33 19.5062 32.6896 17.9458 32.0866 16.4899C31.4835 15.034 30.5996 13.7111 29.4853 12.5968C28.371 11.4825 27.0481 10.5986 25.5922 9.99554C24.1363 9.39248 22.5759 9.08209 21 9.08209C19.4241 9.08209 17.8637 9.39248 16.4078 9.99554C14.9519 10.5986 13.629 11.4825 12.5147 12.5968C11.4004 13.7111 10.5165 15.034 9.91345 16.4899C9.31039 17.9458 9 19.5062 9 21.0821Z" stroke="#A9B1B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -102,18 +109,17 @@
                                 <rect width="32" height="32" fill="white" transform="translate(5 5.08209)"/>
                                 </clipPath>
                                 </defs>
-                                </svg>
-                                
+                            </svg>
                         </div>
-                        <h3 class="text-2xl font-bold mb-2 font-grotesk">General enquiries</h3>
-                        <p class="text-gray-400 mb-4">Do you have a question, suggestion or feedback? We'd love to hear from you.</p>
-                        <a href="mailto:example1@mach5.io" class="text-gray-400 hover:text-white">example1@mach5.io</a>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2 font-grotesk">General enquiries</h3>
+                        <p class="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">Do you have a question, suggestion or feedback? We'd love to hear from you.</p>
+                        <a href="mailto:example1@mach5.io" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors duration-200">example1@mach5.io</a>
                     </div>
             
                     <!-- General Enquiries Card 2 -->
-                    <div class="bg-[#222222] rounded-[32px] p-12 h-[350px] w-[400px] ">
-                        <div class="flex items-center mb-4 ">
-                            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="bg-[#222222] rounded-3xl sm:rounded-[32px] p-6 sm:p-8 lg:p-10 xl:p-12 h-auto sm:h-[350px] w-full max-w-[400px] mx-auto sm:mx-0 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                        <div class="flex items-center mb-3 sm:mb-4">
+                            <svg width="36" height="36" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 sm:w-10 sm:h-10">
                                 <rect width="42" height="42" rx="12" fill="#2F3033"/>
                                 <g clip-path="url(#clip0_2079_8089)">
                                 <path d="M9 21.0821C9 22.658 9.31039 24.2184 9.91345 25.6743C10.5165 27.1302 11.4004 28.4531 12.5147 29.5674C13.629 30.6817 14.9519 31.5656 16.4078 32.1686C17.8637 32.7717 19.4241 33.0821 21 33.0821C22.5759 33.0821 24.1363 32.7717 25.5922 32.1686C27.0481 31.5656 28.371 30.6817 29.4853 29.5674C30.5996 28.4531 31.4835 27.1302 32.0866 25.6743C32.6896 24.2184 33 22.658 33 21.0821C33 19.5062 32.6896 17.9458 32.0866 16.4899C31.4835 15.034 30.5996 13.7111 29.4853 12.5968C28.371 11.4825 27.0481 10.5986 25.5922 9.99554C24.1363 9.39248 22.5759 9.08209 21 9.08209C19.4241 9.08209 17.8637 9.39248 16.4078 9.99554C14.9519 10.5986 13.629 11.4825 12.5147 12.5968C11.4004 13.7111 10.5165 15.034 9.91345 16.4899C9.31039 17.9458 9 19.5062 9 21.0821Z" stroke="#A9B1B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -125,19 +131,17 @@
                                 <rect width="32" height="32" fill="white" transform="translate(5 5.08209)"/>
                                 </clipPath>
                                 </defs>
-                                </svg>
-                                
+                            </svg>
                         </div>
-                        <h3 class="text-2xl font-bold font-grotesk mb-2">General enquiries</h3>
-                        <p class="text-gray-400 mb-4">Do you have a question, suggestion or feedback? We'd love to hear from you.</p>
-                        <a href="mailto:example1@mach5.io" class="text-gray-400 hover:text-white">example1@mach5.io</a>
+                        <h3 class="text-xl sm:text-2xl font-bold font-grotesk mb-2">General enquiries</h3>
+                        <p class="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">Do you have a question, suggestion or feedback? We'd love to hear from you.</p>
+                        <a href="mailto:example1@mach5.io" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors duration-200">example1@mach5.io</a>
                     </div>
-            
             
                     <!-- General Enquiries Card 3 -->
-                    <div class="bg-[#222222] rounded-[32px] p-12 h-[350px] w-[400px] ">
-                        <div class="flex items-center mb-4 ">
-                            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="bg-[#222222] rounded-3xl sm:rounded-[32px] p-6 sm:p-8 lg:p-10 xl:p-12 h-auto sm:h-[350px] w-full max-w-[400px] mx-auto sm:mx-0 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                        <div class="flex items-center mb-3 sm:mb-4">
+                            <svg width="36" height="36" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 sm:w-10 sm:h-10">
                                 <rect width="42" height="42" rx="12" fill="#2F3033"/>
                                 <g clip-path="url(#clip0_2079_8089)">
                                 <path d="M9 21.0821C9 22.658 9.31039 24.2184 9.91345 25.6743C10.5165 27.1302 11.4004 28.4531 12.5147 29.5674C13.629 30.6817 14.9519 31.5656 16.4078 32.1686C17.8637 32.7717 19.4241 33.0821 21 33.0821C22.5759 33.0821 24.1363 32.7717 25.5922 32.1686C27.0481 31.5656 28.371 30.6817 29.4853 29.5674C30.5996 28.4531 31.4835 27.1302 32.0866 25.6743C32.6896 24.2184 33 22.658 33 21.0821C33 19.5062 32.6896 17.9458 32.0866 16.4899C31.4835 15.034 30.5996 13.7111 29.4853 12.5968C28.371 11.4825 27.0481 10.5986 25.5922 9.99554C24.1363 9.39248 22.5759 9.08209 21 9.08209C19.4241 9.08209 17.8637 9.39248 16.4078 9.99554C14.9519 10.5986 13.629 11.4825 12.5147 12.5968C11.4004 13.7111 10.5165 15.034 9.91345 16.4899C9.31039 17.9458 9 19.5062 9 21.0821Z" stroke="#A9B1B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -149,91 +153,115 @@
                                 <rect width="32" height="32" fill="white" transform="translate(5 5.08209)"/>
                                 </clipPath>
                                 </defs>
-                                </svg>
-                                
+                            </svg>
                         </div>
-                        <h3 class="text-2xl font-bold font-grotesk mb-2">General enquiries</h3>
-                        <p class="text-gray-400 mb-4">Do you have a question, suggestion or feedback? We'd love to hear from you.</p>
-                        <a href="mailto:example1@mach5.io" class="text-gray-400 hover:text-white">example1@mach5.io</a>
+                        <h3 class="text-xl sm:text-2xl font-bold font-grotesk mb-2">General enquiries</h3>
+                        <p class="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">Do you have a question, suggestion or feedback? We'd love to hear from you.</p>
+                        <a href="mailto:example1@mach5.io" class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors duration-200">example1@mach5.io</a>
                     </div>
-            
                 </div>
             </div>
-            
         </div>
     </section>
 
     <!-- Write to Us Section -->
-    <section class="bg-[#222222] py-16">
-        <div class="container max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold font-grotesk text-center mb-12">Write to us</h2>
+    <section class="bg-[#222222] py-8 sm:py-12 md:py-16">
+        <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl xs:text-3xl sm:text-4xl font-bold font-grotesk text-center mb-6 sm:mb-10 md:mb-12">Write to us</h2>
             
-            <div class="flex flex-col md:flex-row gap-20">
+            <div class="flex flex-col lg:flex-row gap-6 md:gap-10 lg:gap-16 xl:gap-20">
                 <!-- Left Column - Description -->
-                <div class="md:w-1/2">
-                    <p class="text-white mb-6">
-                        Your message will be sent to our teams worldwide, who will get back to you as soon as they can. Please be advised that weekends and public holidays might delay response time.
-                    </p>
-                    <p class="text-white mb-8">
-                        Whether you have questions about sales or have partner inquiries- you can reach out via email or the form
-                    </p>
+                <div class="lg:w-1/2 space-y-4 sm:space-y-6">
+                    <div class="space-y-3 sm:space-y-4">
+                        <p class="text-white text-sm xs:text-base sm:text-[15px] leading-relaxed">
+                            Your message will be sent to our teams worldwide, who will get back to you as soon as they can. Please be advised that weekends and public holidays might delay response time.
+                        </p>
+                        <p class="text-white text-sm xs:text-base sm:text-[15px] leading-relaxed">
+                            Whether you have questions about sales or have partner inquiries—you can reach out via email or the form.
+                        </p>
+                    </div>
                     
                     <!-- Partner Logos -->
-                    <div class="grid grid-cols-2 gap-6 mt-8">
-                        <div class="flex items-center">
-                            <img src="assets/images/partners/permiso.png" alt="Permiso" class=" h-8 opacity-70 hover:opacity-100 transition-opacity duration-200" />
-
-                        </div>
-                        <div class="flex items-center">
-                            <img src="assets/images/partners/databricks.png" alt="Databricks" class="h-8 opacity-70 hover:opacity-100 transition-opacity duration-200" />
-                        </div>
-                        <div class="flex items-center">
-                            <img src="assets/images/partners/snowflake.png" alt="Snowflake" class=" h-8 opacity-70 hover:opacity-100 transition-opacity duration-200" />
-                        </div>
-                        <div class="flex items-center">
-                            <img src="assets/images/partners/Googlecloud.png" alt="Google Cloud" class="h-8 opacity-70 hover:opacity-100 transition-opacity duration-200" />
+                    <div class="pt-2 sm:pt-4">
+                        <h3 class="text-white text-sm font-medium mb-3 sm:mb-4">Our Trusted Partners:</h3>
+                        <div class="grid grid-cols-2 gap-3 xs:gap-4 sm:gap-5">
+                            <div class="flex items-center justify-center sm:justify-start h-10">
+                                <img src="assets/images/partners/permiso.png" alt="Permiso" 
+                                     class="max-h-6 xs:max-h-7 sm:max-h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-200" />
+                            </div>
+                            <div class="flex items-center justify-center sm:justify-start h-10">
+                                <img src="assets/images/partners/databricks.png" alt="Databricks" 
+                                     class="max-h-6 xs:max-h-7 sm:max-h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-200" />
+                            </div>
+                            <div class="flex items-center justify-center sm:justify-start h-10">
+                                <img src="assets/images/partners/snowflake.png" alt="Snowflake" 
+                                     class="max-h-6 xs:max-h-7 sm:max-h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-200" />
+                            </div>
+                            <div class="flex items-center justify-center sm:justify-start h-10">
+                                <img src="assets/images/partners/Googlecloud.png" alt="Google Cloud" 
+                                     class="max-h-6 xs:max-h-7 sm:max-h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-200" />
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Right Column - Contact Form -->
-                <div class="md:w-1/2 bg-[#2F3033] p-6 rounded-lg">
-                    <h3 class="text-xl font-medium mb-4">Tell us more about your business, and one of our experts will be in touch soon.</h3>
+                <div class="lg:w-1/2 bg-[#2F3033] p-4 sm:p-5 md:p-6 rounded-lg shadow-lg">
+                    <h3 class="text-base sm:text-lg md:text-xl font-medium mb-3 sm:mb-4 leading-snug">
+                        Tell us more about your business, and one of our experts will be in touch soon.
+                    </h3>
                     
-                    <form>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <div>
-                                <label class="block text-sm font-bold font-grotesk text-white mb-1">First Name</label>
-                                <input type="text" class="w-full p-2 bg-[#222222]  rounded-md text-white font-grotesk" placeholder="Enter your first name here">
+                    <form class="space-y-3 sm:space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                            <div class="space-y-1">
+                                <label class="block text-xs xs:text-sm font-bold font-grotesk text-white/90">First Name*</label>
+                                <input type="text" 
+                                       class="w-full p-2 text-xs xs:text-sm bg-[#222222] border border-[#3e3e3e] rounded-md text-white placeholder-white/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
+                                       placeholder="First name" required>
                             </div>
-                            <div>
-                                <label class="block text-sm font-bold font-grotesk text-white mb-1">Last Name</label>
-                                <input type="text" class="w-full p-2 bg-[#222222] rounded-md text-gray-800 font-grotesk" placeholder="Enter your last name here">
+                            <div class="space-y-1">
+                                <label class="block text-xs xs:text-sm font-bold font-grotesk text-white/90">Last Name*</label>
+                                <input type="text" 
+                                       class="w-full p-2 text-xs xs:text-sm bg-[#222222] border border-[#3e3e3e] rounded-md text-white placeholder-white/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
+                                       placeholder="Last name" required>
                             </div>
                         </div>
                         
-                        <div class="mb-4">
-                            <label class="block text-sm font-bold font-grotesk text-white mb-1">Work Email</label>
-                            <input type="email" class="w-full p-2 bg-[#222222] rounded-md text-white font-grotesk" placeholder="Enter your work email">
+                        <div class="space-y-1">
+                            <label class="block text-xs xs:text-sm font-bold font-grotesk text-white/90">Work Email*</label>
+                            <input type="email" 
+                                   class="w-full p-2 text-xs xs:text-sm bg-[#222222] border border-[#3e3e3e] rounded-md text-white placeholder-white/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
+                                   placeholder="your@email.com" required>
                         </div>
                         
-                        <div class="mb-4">
-                            <label class="block text-sm font-bold font-grotesk text-white mb-1">Subject</label>
-                            <input type="text" class="w-full p-2 bg-[#222222]  rounded-md text-white font-grotesk" placeholder="Write a subject line to help us understand">
+                        <div class="space-y-1">
+                            <label class="block text-xs xs:text-sm font-bold font-grotesk text-white/90">Subject*</label>
+                            <input type="text" 
+                                   class="w-full p-2 text-xs xs:text-sm bg-[#222222] border border-[#3e3e3e] rounded-md text-white placeholder-white/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
+                                   placeholder="How can we help?" required>
                         </div>
                         
-                        <div class="mb-6">
-                            <label class="block text-sm font-bold font-grotesk text-white mb-2">Message</label>
-                            <textarea class="w-full p-2 bg-[#222222] rounded-md text-white h-32 font-grotesk" placeholder="Write what you want to share"></textarea>
+                        <div class="space-y-1">
+                            <label class="block text-xs xs:text-sm font-bold font-grotesk text-white/90">Message*</label>
+                            <textarea 
+                                class="w-full p-2 text-xs xs:text-sm bg-[#222222] border border-[#3e3e3e] rounded-md text-white placeholder-white/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition min-h-[100px] sm:min-h-[120px]"
+                                placeholder="Tell us about your project or question..." required></textarea>
                         </div>
                     
-                        <div class="flex items-center mb-6">
-                            <input type="checkbox" id="terms" class="mr-2 appearance-none w-4 h-4 bg-[#222222] checked:bg-gray-400  rounded-sm focus:outline-none focus:ring-2 focus:ring-orange-500" />
-
-                            <label for="terms" class="text-sm text-gray-400">By ticking the box, you agree to our terms & conditions.</label>
+                        <div class="flex items-start pt-1">
+                            <div class="flex items-center h-5">
+                                <input type="checkbox" id="terms" 
+                                       class="w-4 h-4 bg-[#222222] border border-[#3e3e3e] rounded-sm focus:ring-primary focus:ring-1 checked:bg-primary transition" required>
+                            </div>
+                            <label for="terms" class="ml-2 text-xs xs:text-sm text-gray-400">
+                                By ticking the box, you agree to our <a href="#" class="text-primary hover:underline">terms & conditions</a>.
+                            </label>
                         </div>
                         
-                        <button type="submit" class="w-full bg-primary hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-md">Submit</button>
+                        <button type="submit" 
+                                class="w-full bg-primary hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-md text-sm xs:text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-[#2F3033]">
+                            Submit
+                        </button>
                     </form>
                 </div>
             </div>
@@ -242,89 +270,84 @@
     
 
     <!-- FAQ Section -->
-    <section class="bg-[#222222] py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-6">Frequently Asked Question</h2>
+    <section class="bg-[#222222] py-8 md:py-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 font-grotesk">Frequently Asked Questions</h2>
             
             <div class="max-w-3xl mx-auto">
                 <!-- FAQ Item 1 (Open) -->
-                <div class="border-b border-gray-100/40 py-10">
+                <div class="border-b border-gray-100/40 py-6 md:py-10">
                     <div class="flex justify-between items-center cursor-pointer">
                         <div class="flex items-center">
-                            <span class="text-xl font-medium mr-4">1</span>
-                            <h3 class="text-gray-300 pl-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h3>
+                            <span class="text-lg md:text-xl font-medium mr-3 md:mr-4">1</span>
+                            <h3 class="text-gray-400 text-sm sm:text-base md:text-lg pl-4 md:pl-6 font-grotesk">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h3>
                         </div>
                         <button class="text-gray-400">
-                            <svg width="16" height="16" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1L25 25M25 1L1 25" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                                
+                            </svg>
                         </button>
                     </div>
-                    <div class="pt-4 pl-11">
-                        <p class="text-gray-400">
+                    <div class="pt-3 md:pt-4 pl-11 md:pl-14">
+                        <p class="text-gray-300 text-xs sm:text-sm md:text-base">
                             Analysis of event data is critical for security analytics, SIEM, observability, and APM applications, but legacy solutions have forced impossible tradeoffs between performance, scale, and cost. Mach5 Software breaks these constraints with our high-performance search and analytics platform.
                         </p>
                     </div>
                 </div>
                 
                 <!-- FAQ Items 2-5 (Closed) -->
-                <div class="border-b border-gray-100/40 py-8">
+                <div class="border-b border-gray-100/40 py-5 md:py-8">
                     <div class="flex justify-between items-center cursor-pointer">
                         <div class="flex items-center">
-                            <span class="text-xl font-medium mr-4">2</span>
-                            <h3 class="text-gray-400 pl-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h3>
+                            <span class="text-lg md:text-xl font-medium mr-3 md:mr-4">2</span>
+                            <h3 class="text-gray-300 text-sm sm:text-base md:text-lg pl-4 md:pl-6 font-grotesk">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h3>
                         </div>
                         <button class="text-gray-300">
-                            <svg width="20" height="14" viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-4 h-3 md:w-5 md:h-3" viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1L13 13L25 1" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                
+                            </svg>
                         </button>
                     </div>
                 </div>
                 
-                <div class="border-b border-gray-100/40 py-8">
+                <div class="border-b border-gray-100/40 py-5 md:py-8">
                     <div class="flex justify-between items-center cursor-pointer">
                         <div class="flex items-center">
-                            <span class="text-xl font-medium mr-4">3</span>
-                            <h3 class="text-gray-300 pl-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h3>
+                            <span class="text-lg md:text-xl font-medium mr-3 md:mr-4">3</span>
+                            <h3 class="text-gray-300 text-sm sm:text-base md:text-lg pl-4 md:pl-6 font-grotesk">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h3>
                         </div>
                         <button class="text-gray-400">
-                            <svg width="20" height="14"  viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-4 h-3 md:w-5 md:h-3" viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1L13 13L25 1" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                
+                            </svg>
                         </button>
                     </div>
                 </div>
                 
-                <div class="border-b border-gray-100/40 py-8">
+                <div class="border-b border-gray-100/40 py-5 md:py-8">
                     <div class="flex justify-between items-center cursor-pointer">
                         <div class="flex items-center">
-                            <span class="text-xl font-medium mr-4">4</span>
-                            <h3 class="text-gray-300 pl-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h3>
+                            <span class="text-lg md:text-xl font-medium mr-3 md:mr-4">4</span>
+                            <h3 class="text-gray-300 text-sm sm:text-base md:text-lg pl-4 md:pl-6 font-grotesk">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h3>
                         </div>
                         <button class="text-gray-400">
-                            <svg width="20" height="14" viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-4 h-3 md:w-5 md:h-3" viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1L13 13L25 1" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                
+                            </svg>
                         </button>
                     </div>
                 </div>
                 
-                <div class=" py-8">
+                <div class="py-5 md:py-8">
                     <div class="flex justify-between items-center cursor-pointer">
                         <div class="flex items-center">
-                            <span class="text-xl font-medium mr-4">5</span>
-                            <h3 class="text-gray-300 pl-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h3>
+                            <span class="text-lg md:text-xl font-medium mr-3 md:mr-4">5</span>
+                            <h3 class="text-gray-300 text-sm sm:text-base md:text-lg pl-4 md:pl-6 font-grotesk">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h3>
                         </div>
                         <button class="text-gray-400">
-                            <svg width="20" height="14" viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-4 h-3 md:w-5 md:h-3" viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1L13 13L25 1" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                
+                            </svg>
                         </button>
                     </div>
                 </div>
