@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mach5 - Integrated Search and Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF4B26',
+                        dark: '#212121',
+                        'dark-800': '#1A1A1A',
+                        'dark-700': '#262626',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(var(--tw-gradient-stops))',
+                    },
+                    fontFamily: {
+                    grotesk: ['"Space Grotesk"', 'sans-serif'],
+                  },
+                }
+            }
+        }
+    </script>
+     <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
+    </script>
+    <style>
+        .bg-mesh {
+            background-image: 
+                radial-gradient(at 20% 0%, rgba(255, 75, 38, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(255, 75, 38, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(255, 75, 38, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 50%, rgba(255, 75, 38, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(255, 75, 38, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, rgba(255, 75, 38, 0.1) 0px, transparent 50%);
+        }
+        .nav-blur {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+
+        
+    </style>
+</head>
+<body class="bg-[#222222]">
+    <section class="bg-[#222222] text-white">
+        <nav class="fixed w-full z-50 bg-dark border-none backdrop-blur-sm bg-opacity-70">
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+              <a href="index.html" class="flex items-center space-x-2">
+                <img src="https://imgs.search.brave.com/U8Gh_WPXBSBPpRiVrtuK9QXFM-xkMeNFd7DKOFWO1fQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vcGVu/c2VhcmNoLm9yZy9h/c3NldHMvbWVkaWEv/cGFydG5lcnMvbWFj/aDUvbWFjaDUtbG9n/by5wbmc"
+                     alt="Mach5 Logo" class="w-8 h-8 object-contain" />
+                <span class="text-2xl font-bold tracking-tight">Mach5</span>
+              </a>
+              <div class="hidden md:flex items-center space-x-8">
+                <a href="about.html" class="text-gray-400 hover:text-white text-sm font-medium">About us</a>
+                <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Platform</a>
+                <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Solutions</a>
+                <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Docs</a>
+                <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Resources</a>
+                <a href="#" class="text-gray-400 hover:text-white text-sm font-medium">Pricing</a>
+              </div>
+      
+              <div class="hidden md:block">
+                <button class="bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200 shadow-lg shadow-blue-600/20">
+                  Get started for free
+                </button>
+              </div>
+      
+              <div class="md:hidden">
+                <button onclick="toggleMenu()" class="text-gray-400 hover:text-white focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+      
+            <div id="mobile-menu" class="md:hidden mt-4 space-y-4 hidden">
+              <a href="about.html" class="block text-gray-100 hover:text-white text-sm font-medium">About us</a>
+              <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Platform</a>
+              <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Solutions</a>
+              <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Docs</a>
+              <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Resources</a>
+              <a href="#" class="block text-gray-200 hover:text-white text-sm font-medium">Pricing</a>
+              <button class="w-full bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200 shadow-md shadow-orange-600/20">
+                Get started for free
+              </button>
+            </div>
+          </div>
+        </nav>
+      </section>
+
+
+      <!-- hero section -->
+      <section class="bg-[linear-gradient(to_bottom,_#222222_20%,_#FF5C1B_90%,_#FF5C1B_100%)] pt-28 pb-14">
+        <div class="max-w-6xl mx-auto px-4">
+          <h2 class="text-4xl font-bold text-white text-center mb-12">Resources</h2>
+      
+          <div class="flex flex-col md:flex-row bg-[#1F1F1F] rounded-md overflow-hidden">
+            <!-- Image Placeholder -->
+            <div class="w-full md:w-1/3 bg-gray-300 h-100 md:h-auto"></div>
+      
+            <!-- Content -->
+            <div class="w-full md:w-2/4 p-10 flex flex-col justify-between">
+              <div>
+                <h3 class="text-white font-semibold text-sm">Officia adipiscing reprehenderit esse in sunt</h3>
+                <p class="text-xs text-gray-400 mt-2 mb-4">Cybersecurity</p>
+                <hr class="border-gray-600 mb-6" />
+                <p class="text-gray-300 text-sm leading-relaxed">
+                  Cupidatat, ipsum ad aliquip cillum. Aliquip cillum duis aute excepteur consectetur lorem quis.
+                  Duis aute excepteur consectetur lorem. Excepteur consectetur lorem quis, id ullamco. Quis id
+                  ullamco culpa est ex laboris. Ullamco culpa est ex laboris, ad in ea.
+                </p>
+              </div>
+              <a href="#" class="text-[#FF5C1B] text-sm font-semibold mt-6 inline-block">
+                See the full story →
+              </a>
+            </div>
+          </div>
+      
+          <!-- Carousel Dots -->
+          <div class="flex justify-center mt-6 space-x-2">
+            <span class="w-2 h-2 rounded-full bg-black"></span>
+            <span class="w-2 h-2 rounded-full bg-black/30"></span>
+            <span class="w-2 h-2 rounded-full bg-black/30"></span>
+            <span class="w-2 h-2 rounded-full bg-black/30"></span>
+          </div>
+        </div>
+      </section>
+
+
+<body class="bg-black text-white">
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Navigation Tabs -->
+        <div class="flex flex-col sm:flex-row mb-8 font-grotesk gap-3 sm:gap-0">
+            <!-- Tabs - now properly scales for all screens -->
+            <div class="flex flex-wrap rounded-lg bg-[#2F3033] p-1 sm:p-2 gap-1 sm:gap-2">
+                <!-- Tab 1 - Active -->
+                <div class="relative">
+                    <div class="bg-primary text-white rounded-md px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold">
+                        All Resources
+                    </div>
+                </div>
+                
+                <!-- Tab 2 -->
+                <div class="relative">
+                    <div class="bg-[#2F3033] text-white rounded-md px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm cursor-pointer">
+                        Success Stories
+                    </div>
+                </div>
+                
+                <!-- Tab 3 -->
+                <div class="relative">
+                    <div class="bg-[#2F3033] text-white rounded-md px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm cursor-pointer">
+                        Case Stories
+                    </div>
+                </div>
+                
+                <!-- Tab 4 -->
+                <div class="relative">
+                    <div class="bg-[#2F3033] text-white rounded-md px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm cursor-pointer">
+                        Blogs
+                    </div>
+                </div>
+                
+                <!-- Tab 5 -->
+                <div class="relative">
+                    <div class="bg-[#2F3033] text-white rounded-md px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm cursor-pointer">
+                        Videos
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Search - maintains proper sizing -->
+            <div class="sm:ml-auto w-full sm:w-auto mt-2 sm:mt-0">
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.5556 13.891C16.278 14.3188 16.304 14.89 16.6647 15.2505L19.6067 18.1919C19.9973 18.5824 19.9971 19.2159 19.6065 19.6065C19.2159 19.9971 18.5824 19.9973 18.1919 19.6067L15.2505 16.6647C14.89 16.304 14.3188 16.278 13.891 16.5556C12.4404 17.4972 10.7421 18.0025 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18.0025 10.7421 17.4972 12.4404 16.5556 13.891ZM14.025 13.875C15.2938 12.5697 16.0025 10.8204 16 9C16 5.133 12.867 2 9 2C5.133 2 2 5.133 2 9C2 12.867 5.133 16 9 16C10.8204 16.0025 12.5697 15.2938 13.875 14.025L14.025 13.875Z" fill="#FF5C1B"/>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Search All Resources" class="bg-dark border border-gray-700 rounded-lg pl-10 pr-4 py-2 text-sm text-white w-full sm:w-[200px] md:w-[300px]">
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Grid - First Row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <!-- Blog Card 1 -->
+            <div class="rounded-lg overflow-hidden font-grotesk">
+                <!-- Image Placeholder -->
+                <div class="h-40 bg-gray-300"></div>
+              
+                <!-- Card Content -->
+                <div class="p-4 bg-dark rounded-b-xl border-l-2 border-r-2 border-b-2 border-t-0 border-gray-600">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm text-gray-400">Jan 16, 2025</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-dark border-2 border-primary text-white">Blog</span>
+                  </div>
+                  <h3 class="font-bold text-white mb-4">Laboris consectetur nostrud fugiat elit consectetur officia duis</h3>
+                  <p class="text-sm text-gray-400 mb-4">By Amit Trivedi</p>
+                  <button class="bg-primary hover:bg-primary/90 text-white w-full py-2 px-4 rounded">Read more</button>
+                </div>
+              </div>
+              
+
+            <!-- Blog Card 2 -->
+            <div class="rounded-lg overflow-hidden font-grotesk">
+                <!-- Image Placeholder -->
+                <div class="h-40 bg-gray-300"></div>
+              
+                <!-- Card Content -->
+                <div class="p-4 bg-dark rounded-b-xl border-l-2 border-r-2 border-b-2 border-t-0 border-gray-600">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm text-gray-400">Jan 16, 2025</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-dark border-2 border-primary text-white">Blog</span>
+                  </div>
+                  <h3 class="font-bold text-white mb-4">Laboris consectetur nostrud fugiat elit consectetur officia duis</h3>
+                  <p class="text-sm text-gray-400 mb-4">By Amit Trivedi</p>
+                  <button class="bg-primary hover:bg-primary/90 text-white w-full py-2 px-4 rounded">Read more</button>
+                </div>
+              </div>
+
+            <!-- Blog Card 3 -->
+            <div class="rounded-lg overflow-hidden font-grotesk">
+                <!-- Image Placeholder -->
+                <div class="h-40 bg-gray-300"></div>
+              
+                <!-- Card Content -->
+                <div class="p-4 bg-dark rounded-b-xl border-l-2 border-r-2 border-b-2 border-t-0 border-gray-600">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm text-gray-400">Jan 16, 2025</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-dark border-2 border-primary text-white">Blog</span>
+                  </div>
+                  <h3 class="font-bold text-white mb-4">Laboris consectetur nostrud fugiat elit consectetur officia duis</h3>
+                  <p class="text-sm text-gray-400 mb-4">By Amit Trivedi</p>
+                  <button class="bg-primary hover:bg-primary/90 text-white w-full py-2 px-4 rounded">Read more</button>
+                </div>
+              </div>
+        </div>
+
+        <!-- Blog Grid - Second Row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Blog Card 4 -->
+            <div class="rounded-lg overflow-hidden font-grotesk">
+                <!-- Image Placeholder -->
+                <div class="h-40 bg-gray-300"></div>
+              
+                <!-- Card Content -->
+                <div class="p-4 bg-dark rounded-b-xl border-l-2 border-r-2 border-b-2 border-t-0 border-gray-600">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm text-gray-400">Jan 16, 2025</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-dark border-2 border-primary text-white">Blog</span>
+                  </div>
+                  <h3 class="font-bold text-white mb-4">Laboris consectetur nostrud fugiat elit consectetur officia duis</h3>
+                  <p class="text-sm text-gray-400 mb-4">By Amit Trivedi</p>
+                  <button class="bg-primary hover:bg-primary/90 text-white w-full py-2 px-4 rounded">Read more</button>
+                </div>
+              </div>
+
+            <!-- Blog Card 5 -->
+            <div class="rounded-lg overflow-hidden font-grotesk">
+                <!-- Image Placeholder -->
+                <div class="h-40 bg-gray-300"></div>
+              
+                <!-- Card Content -->
+                <div class="p-4 bg-dark rounded-b-xl border-l-2 border-r-2 border-b-2 border-t-0 border-gray-600">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm text-gray-400">Jan 16, 2025</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-dark border-2 border-primary text-white">Blog</span>
+                  </div>
+                  <h3 class="font-bold text-white mb-4">Laboris consectetur nostrud fugiat elit consectetur officia duis</h3>
+                  <p class="text-sm text-gray-400 mb-4">By Amit Trivedi</p>
+                  <button class="bg-primary hover:bg-primary/90 text-white w-full py-2 px-4 rounded">Read more</button>
+                </div>
+              </div>
+
+            <!-- Blog Card 6 -->
+            <div class="rounded-lg overflow-hidden font-grotesk">
+                <!-- Image Placeholder -->
+                <div class="h-40 bg-gray-300"></div>
+              
+                <!-- Card Content -->
+                <div class="p-4 bg-dark rounded-b-xl border-l-2 border-r-2 border-b-2 border-t-0 border-gray-600">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm text-gray-400">Jan 16, 2025</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-dark border-2 border-primary text-white">Blog</span>
+                  </div>
+                  <h3 class="font-bold text-white mb-4">Laboris consectetur nostrud fugiat elit consectetur officia duis</h3>
+                  <p class="text-sm text-gray-400 mb-4">By Amit Trivedi</p>
+                  <button class="bg-primary hover:bg-primary/90 text-white w-full py-2 px-4 rounded">Read more</button>
+                </div>
+              </div>
+        </div>
+    </div>
+
+
+
+
+    <section class="mx-auto max-w-6xl px-4 py-12">
+        <div class="bg-[#2F3033] rounded-lg p-4 sm:p-8 md:p-12 lg:p-16">
+            <div class="flex flex-col items-center justify-center">
+                <h2 class="text-white text-2xl sm:text-3xl font-medium mb-4 sm:mb-6">Follow us on</h2>
+                <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-10">
+                    <!-- LinkedIn -->
+                    <a href="#" class="text-orange-500 hover:text-orange-400 transition-colors">
+                        <svg class="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M43.8116 0.000335589H4.18838C3.74298 -0.00601141 3.30072 0.0777285 2.88686 0.246773C2.473 0.415818 2.09565 0.666856 1.77636 0.985551C1.45707 1.30425 1.20209 1.68435 1.02599 2.10417C0.849882 2.52398 0.756101 2.97528 0.75 3.43229V44.5677C0.756101 45.0247 0.849882 45.476 1.02599 45.8958C1.20209 46.3156 1.45707 46.6958 1.77636 47.0144C2.09565 47.3331 2.473 47.5842 2.88686 47.7532C3.30072 47.9223 3.74298 48.006 4.18838 47.9997H43.8116C44.257 48.006 44.6993 47.9223 45.1131 47.7532C45.527 47.5842 45.9043 47.3331 46.2236 47.0144C46.5429 46.6958 46.7979 46.3156 46.974 45.8958C47.1501 45.476 47.2439 45.0247 47.25 44.5677V3.43229C47.2439 2.97528 47.1501 2.52398 46.974 2.10417C46.7979 1.68435 46.5429 1.30425 46.2236 0.985551C45.9043 0.666856 45.527 0.415818 45.1131 0.246773C44.6993 0.0777285 44.257 -0.00601141 43.8116 0.000335589ZM14.8544 40.1758H7.83727V18.5761H14.8544V40.1758ZM11.3458 15.5521C10.3781 15.5521 9.44997 15.1577 8.76567 14.4555C8.08137 13.7534 7.69693 12.8011 7.69693 11.8082C7.69693 10.8152 8.08137 9.86293 8.76567 9.1608C9.44997 8.45867 10.3781 8.06422 11.3458 8.06422C11.8597 8.00443 12.3801 8.05667 12.8729 8.21754C13.3658 8.37841 13.8199 8.64427 14.2057 8.99772C14.5914 9.35116 14.9 9.78423 15.1114 10.2685C15.3227 10.7529 15.4319 11.2775 15.4319 11.8082C15.4319 12.3388 15.3227 12.8635 15.1114 13.3478C14.9 13.8321 14.5914 14.2652 14.2057 14.6186C13.8199 14.9721 13.3658 15.2379 12.8729 15.3988C12.3801 15.5597 11.8597 15.6119 11.3458 15.5521ZM40.1627 40.1758H33.1456V28.5839C33.1456 25.68 32.1398 23.784 29.5903 23.784C28.8012 23.7899 28.0329 24.0439 27.3889 24.5116C26.7448 24.9793 26.256 25.6384 25.9882 26.4C25.8051 26.9641 25.7258 27.5581 25.7543 28.1519V40.1518H18.7372V18.5521H25.7543V21.6C26.3917 20.4651 27.3189 19.5301 28.4358 18.8958C29.5528 18.2614 30.8173 17.9517 32.0931 18.0001C36.7711 18.0001 40.1627 21.096 40.1627 27.7439V40.1758Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <!-- YouTube -->
+                    <a href="#" class="text-orange-500 hover:text-orange-400 transition-colors">
+                        <svg class="w-12 h-10 sm:w-14 sm:h-12" viewBox="0 0 69 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28.05 34.2857L45.7609 24L28.05 13.7143V34.2857ZM67.4985 7.44C67.9421 9.05143 68.2493 11.2114 68.454 13.9543C68.6929 16.6971 68.7953 19.0629 68.7953 21.12L69 24C69 31.5086 68.454 37.0286 67.4985 40.56C66.6454 43.6457 64.6661 45.6343 61.5949 46.4914C59.991 46.9371 57.0563 47.2457 52.5518 47.4514C48.1155 47.6914 44.0546 47.7943 40.3009 47.7943L34.875 48C20.5766 48 11.67 47.4514 8.15513 46.4914C5.08388 45.6343 3.10463 43.6457 2.2515 40.56C1.80788 38.9486 1.50075 36.7886 1.296 34.0457C1.05713 31.3029 0.95475 28.9371 0.95475 26.88L0.75 24C0.75 16.4914 1.296 10.9714 2.2515 7.44C3.10463 4.35429 5.08388 2.36571 8.15513 1.50857C9.759 1.06286 12.6938 0.754285 17.1983 0.548571C21.6345 0.308571 25.6954 0.205714 29.4491 0.205714L34.875 0C49.1734 0 58.08 0.548572 61.5949 1.50857C64.6661 2.36571 66.6454 4.35429 67.4985 7.44Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <!-- Discord -->
+                    <a href="#" class="text-orange-500 hover:text-orange-400 transition-colors">
+                        <svg class="w-11 h-10 sm:w-12 sm:h-12" viewBox="0 0 62 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M52.4598 3.98897C48.5331 2.12945 44.2815 0.779798 39.8528 0C39.7749 0.00112682 39.7007 0.0334677 39.6461 0.0899773C39.1147 1.07972 38.4947 2.36939 38.0813 3.35913C33.3839 2.63977 28.6069 2.63977 23.9095 3.35913C23.4962 2.33939 22.8762 1.07972 22.3152 0.0899773C22.2857 0.0299929 22.1971 0 22.1085 0C17.6798 0.779798 13.4578 2.12945 9.50151 3.98897C9.47198 3.98897 9.44246 4.01896 9.41293 4.04895C1.38224 16.2558 -0.83211 28.1327 0.260301 39.8897C0.260301 39.9497 0.289826 40.0096 0.348875 40.0396C5.66331 43.9986 10.7711 46.398 15.8198 47.9876C15.9083 48.0176 15.9969 47.9876 16.0264 47.9276C17.2074 46.278 18.2703 44.5385 19.1856 42.7089C19.2446 42.589 19.1856 42.469 19.0675 42.439C17.3846 41.7792 15.7903 40.9994 14.2254 40.0996C14.1073 40.0396 14.1073 39.8597 14.1959 39.7697C14.5207 39.5298 14.8455 39.2598 15.1702 39.0199C15.2293 38.9599 15.3179 38.9599 15.3769 38.9899C25.5334 43.6987 36.487 43.6987 46.5254 38.9899C46.5844 38.9599 46.673 38.9599 46.7321 39.0199C47.0568 39.2898 47.3816 39.5298 47.7064 39.7997C47.8245 39.8897 47.8245 40.0696 47.6768 40.1296C46.1416 41.0594 44.5177 41.8092 42.8348 42.469C42.7167 42.499 42.6872 42.649 42.7167 42.7389C43.6615 44.5685 44.7244 46.308 45.8758 47.9576C45.9644 47.9876 46.053 48.0176 46.1416 47.9876C51.2198 46.398 56.3275 43.9986 61.642 40.0396C61.701 40.0096 61.7306 39.9497 61.7306 39.8897C63.0296 26.3032 59.5753 14.5162 52.5779 4.04895C52.5484 4.01896 52.5189 3.98897 52.4598 3.98897ZM20.7209 32.7215C17.6798 32.7215 15.1407 29.8723 15.1407 26.3632C15.1407 22.8541 17.6208 20.0048 20.7209 20.0048C23.8505 20.0048 26.3305 22.8841 26.301 26.3632C26.301 29.8723 23.8209 32.7215 20.7209 32.7215ZM41.2995 32.7215C38.2585 32.7215 35.7194 29.8723 35.7194 26.3632C35.7194 22.8541 38.1994 20.0048 41.2995 20.0048C44.4291 20.0048 46.9092 22.8841 46.8797 26.3632C46.8797 29.8723 44.4291 32.7215 41.2995 32.7215Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="#" class="text-orange-500 hover:text-orange-400 transition-colors">
+                        <svg class="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 0C21.717 0 18.4661 0.636191 15.4329 1.87225C12.3998 3.1083 9.6438 4.92002 7.32233 7.20396C2.63392 11.8166 0 18.0726 0 24.5958C0 35.4672 7.175 44.6907 17.1 47.9619C18.35 48.1587 18.75 47.3962 18.75 46.7321V42.5754C11.825 44.0512 10.35 39.2796 10.35 39.2796C9.2 36.4264 7.575 35.664 7.575 35.664C5.3 34.139 7.75 34.1882 7.75 34.1882C10.25 34.3604 11.575 36.7216 11.575 36.7216C13.75 40.4602 17.425 39.3534 18.85 38.7631C19.075 37.1643 19.725 36.0821 20.425 35.4672C14.875 34.8523 9.05 32.7371 9.05 23.3661C9.05 20.6359 10 18.4469 11.625 16.7006C11.375 16.0857 10.5 13.5277 11.875 10.2073C11.875 10.2073 13.975 9.54319 18.75 12.7161C20.725 12.1749 22.875 11.9044 25 11.9044C27.125 11.9044 29.275 12.1749 31.25 12.7161C36.025 9.54319 38.125 10.2073 38.125 10.2073C39.5 13.5277 38.625 16.0857 38.375 16.7006C40 18.4469 40.95 20.6359 40.95 23.3661C40.95 32.7617 35.1 34.8277 29.525 35.4426C30.425 36.2051 31.25 37.7054 31.25 39.9928V46.7321C31.25 47.3962 31.65 48.1833 32.925 47.9619C42.85 44.6661 50 35.4672 50 24.5958C50 21.3659 49.3534 18.1675 48.097 15.1834C46.8406 12.1993 44.9991 9.48789 42.6777 7.20396C40.3562 4.92002 37.6002 3.1083 34.5671 1.87225C31.5339 0.636191 28.283 0 25 0Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+     <!-- footer -->
+     <section class="bg-dark text-white py-8 px-4 sm:px-6 md:px-10 border-t-2 mx-4 sm:mx-6 md:mx-12 font-grotesk">
+        <div class="max-w-screen-xl mx-auto">
+  
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-6 md:gap-8 text-sm">
+            <div class="md:col-span-1">
+              <img src="https://imgs.search.brave.com/U8Gh_WPXBSBPpRiVrtuK9QXFM-xkMeNFd7DKOFWO1fQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vcGVu/c2VhcmNoLm9yZy9h/c3NldHMvbWVkaWEv/cGFydG5lcnMvbWFj/aDUvbWFjaDUtbG9n/by5wbmc" alt="Mach5 Logo" class="h-6 sm:h-8 mb-2 sm:mb-4">
+              <h2 class="text-base sm:text-lg font-bold mb-1 sm:mb-2">Integrated Search and Analytics</h2>
+              <p class="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-4">Transforming data search and analytics</p>
+              <a href="#" class="bg-orange-600 hover:bg-orange-700 text-white text-xs sm:text-sm px-3 py-1.5 rounded inline-flex items-center">
+                Try it for free
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+  
+            <div>
+              <h3 class="text-gray-500 font-medium mb-2">Platform</h3>
+              <ul class="space-y-1">
+                <li><a href="#" class="text-gray-300 hover:text-white">Why Mach5 Search?</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Product updates</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Search platforms</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">How we compare</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Status</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Security</a></li>
+              </ul>
+            </div>
+      
+  
+            <div>
+              <h3 class="text-gray-500 font-medium mb-2">Resources</h3>
+              <ul class="space-y-1">
+                <li><a href="#" class="text-gray-300 hover:text-white">Docs</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">User stories</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Blog</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Glossary</a></li>
+                <li><a href="casestudies.html" class="text-gray-300 hover:text-white">Use cases</a></li>
+              </ul>
+            </div>
+    
+            <div>
+              <h3 class="text-gray-500 font-medium mb-2">Industries</h3>
+              <ul class="space-y-1">
+                <li><a href="#" class="text-gray-300 hover:text-white">Security firms</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Financial services</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Healthcare</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Fraud detection services</a></li>
+              </ul>
+            </div>
+      
+            <div>
+              <h3 class="text-gray-500 font-medium mb-2">Company</h3>
+              <ul class="space-y-1">
+                <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Leadership</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Roadmap</a></li>
+              </ul>
+            </div>
+      
+            <div>
+              <h3 class="text-gray-500 font-medium mb-2">Help</h3>
+              <ul class="space-y-1">
+                <li><a href="#" class="text-gray-300 hover:text-white">Contact us</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Help center</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Talk to sales</a></li>
+              </ul>
+            </div>
+          </div>
+  
+          <div class="mt-8 pt-4 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm">
+            <div class="text-gray-500 mb-2 sm:mb-0 text-center sm:text-left">
+              © 2025 Mach5. All rights reserved.
+              <span class="mx-1">|</span>
+              <a href="#" class="hover:text-white">Privacy policy</a>
+              <span class="mx-1">|</span>
+              <a href="#" class="hover:text-white">Terms & conditions</a>
+            </div>
+      
+            <div class="flex space-x-3 mt-2 sm:mt-0">
+        
+              <a href="#" class="text-orange-600 hover:text-orange-700">
+                <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+              <a href="#" class="text-orange-600 hover:text-orange-700">
+                <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                </svg>
+              </a>
+              <a href="#" class="text-orange-600 hover:text-orange-700">
+                <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+</body>
+</html>

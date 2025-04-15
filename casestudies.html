@@ -191,112 +191,112 @@
           </div>
       
           <!-- Second Column - Scrollable Challenges Section -->
-          <div class="w-3/4 p-10  overflow-y-auto h-screen scrollbar-hide font-grotesk">
+          <div class="w-3/4 p-10 font-grotesk">
             <!-- Challenges Section -->
             <div class="mb-12">
-              <h2 class="text-3xl font-bold mb-6 font-grotesk">Challenges</h2>
-              <p class="text-gray-300 mb-8 ">
-                Initially, Permiso built custom solutions using AWS Lambda, DynamoDB, and PostgreSQL to process and store security event data. While this approach worked for their first few use cases, scaling became a major hurdle as new use cases and enterprise customers were added.
-              </p>
-              <p class="text-gray-300 mb-6">
-                <span class="underline decoration-orange-600 decoration-1 underline-offset-4">
-                  The custom-built solutions introduced several inefficiencies:
-                </span>
-              </p>      
-              <div class="space-y-6">
-                <div>
-                  <div class="flex items-start mb-2">
-                    <span class="text-orange-500 mr-2">•</span>
-                    <h3 class="text-orange-500 font-medium">High Turnaround Time:</h3>
-                  </div>
-                  <p class="pl-5 text-gray-300">Every new use case required additional development effort, slowing down the deployment of new features.</p>
+                <h2 class="text-3xl font-bold mb-6 font-grotesk">Challenges</h2>
+                <p class="text-gray-300 mb-8 ">
+                    Initially, Permiso built custom solutions using AWS Lambda, DynamoDB, and PostgreSQL to process and store security event data. While this approach worked for their first few use cases, scaling became a major hurdle as new use cases and enterprise customers were added.
+                </p>
+                <p class="text-gray-300 mb-6">
+                    <span class="underline decoration-orange-600 decoration-1 underline-offset-4">
+                        The custom-built solutions introduced several inefficiencies:
+                    </span>
+                </p>      
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex items-start mb-2">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <h3 class="text-orange-500 font-medium">High Turnaround Time:</h3>
+                        </div>
+                        <p class="pl-5 text-gray-300">Every new use case required additional development effort, slowing down the deployment of new features.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-start mb-2">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <h3 class="text-orange-500 font-medium">Infrastructure Complexity:</h3>
+                        </div>
+                        <p class="pl-5 text-gray-300">Each use case needed a separate infrastructure design, making management cumbersome.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-start mb-2">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <h3 class="text-orange-500 font-medium">Data store Proliferation:</h3>
+                        </div>
+                        <p class="pl-5 text-gray-300">Data was carefully fragmented between multiple data stores to solve specific problems. Sometimes a single use case required the use of multiple stores at various stages of processing creating subtle data synchronization inconsistencies that required developer attention.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-start mb-2">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <h3 class="text-orange-500 font-medium">Increasing Costs:</h3>
+                        </div>
+                        <p class="pl-5 text-gray-300">As the number of use cases grew, the cost of maintaining and scaling infrastructure increased significantly.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-start mb-2">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <h3 class="text-orange-500 font-medium">Manual Scaling Burden:</h3>
+                        </div>
+                        <p class="pl-5 text-gray-300">Human intervention was required to manage and scale clusters, leading to operational inefficiencies.</p>
+                    </div>
                 </div>
-                
-                <div>
-                  <div class="flex items-start mb-2">
-                    <span class="text-orange-500 mr-2">•</span>
-                    <h3 class="text-orange-500 font-medium">Infrastructure Complexity:</h3>
-                  </div>
-                  <p class="pl-5 text-gray-300">Each use case needed a separate infrastructure design, making management cumbersome.</p>
-                </div>
-                
-                <div>
-                  <div class="flex items-start mb-2">
-                    <span class="text-orange-500 mr-2">•</span>
-                    <h3 class="text-orange-500 font-medium">Data store Proliferation:</h3>
-                  </div>
-                  <p class="pl-5 text-gray-300">Data was carefully fragmented between multiple data stores to solve specific problems. Sometimes a single use case required the use of multiple stores at various stages of processing creating subtle data synchronization inconsistencies that required developer attention.</p>
-                </div>
-                
-                <div>
-                  <div class="flex items-start mb-2">
-                    <span class="text-orange-500 mr-2">•</span>
-                    <h3 class="text-orange-500 font-medium">Increasing Costs:</h3>
-                  </div>
-                  <p class="pl-5 text-gray-300">As the number of use cases grew, the cost of maintaining and scaling infrastructure increased significantly.</p>
-                </div>
-                
-                <div>
-                  <div class="flex items-start mb-2">
-                    <span class="text-orange-500 mr-2">•</span>
-                    <h3 class="text-orange-500 font-medium">Manual Scaling Burden:</h3>
-                  </div>
-                  <p class="pl-5 text-gray-300">Human intervention was required to manage and scale clusters, leading to operational inefficiencies.</p>
-                </div>
-              </div>
             </div>
-      
+        
             <!-- Mach5 Section -->
             <div class="mb-12">
-              <h2 class="text-3xl font-bold mb-6">How Mach5's All-in-one Search and Analytics Platform Transformed Permiso's Security Analytics</h2>
-              
-              <div class="border-l-4 border-orange-600 pl-6 py-4 my-8 ">
-                <p class="text-white font-grotesk">
-                  "By adopting Mach5, Permiso streamlined its data infrastructure, allowing all raw and processed event data to be stored in a single, centralized event store. This enabled multiple security analytics use cases without the need to constantly rethink infrastructure."
-                </p>
-              </div>
-      
-              <div class="space-y-6">
-                <div>
-                  <div class="flex items-start mb-2">
-                    <span class="text-orange-500 mr-2">•</span>
-                    <h3 class="text-orange-500 font-medium">High Turnaround Time:</h3>
-                  </div>
-                  <p class="pl-5 text-gray-300">Every new use case required additional development effort, slowing down the deployment of new features.</p>
-                </div>
+                <h2 class="text-3xl font-bold mb-6">How Mach5's All-in-one Search and Analytics Platform Transformed Permiso's Security Analytics</h2>
                 
-                <div>
-                  <div class="flex items-start mb-2">
-                    <span class="text-orange-500 mr-2">•</span>
-                    <h3 class="text-orange-500 font-medium">Infrastructure Complexity:</h3>
-                  </div>
-                  <p class="pl-5 text-gray-300">Each use case needed a separate infrastructure design, making management cumbersome.</p>
+                <div class="border-l-4 border-orange-600 pl-6 py-4 my-8 ">
+                    <p class="text-white font-grotesk">
+                        "By adopting Mach5, Permiso streamlined its data infrastructure, allowing all raw and processed event data to be stored in a single, centralized event store. This enabled multiple security analytics use cases without the need to constantly rethink infrastructure."
+                    </p>
                 </div>
-                
-                <div>
-                  <div class="flex items-start mb-2">
-                    <span class="text-orange-500 mr-2">•</span>
-                    <h3 class="text-orange-500 font-medium">Data store Proliferation:</h3>
-                  </div>
-                  <p class="pl-5 text-gray-300">Data was carefully fragmented between multiple data stores to solve specific problems. Sometimes a single use case required the use of multiple stores at various stages of processing creating subtle data synchronization inconsistencies that required developer attention.</p>
+        
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex items-start mb-2">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <h3 class="text-orange-500 font-medium">High Turnaround Time:</h3>
+                        </div>
+                        <p class="pl-5 text-gray-300">Every new use case required additional development effort, slowing down the deployment of new features.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-start mb-2">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <h3 class="text-orange-500 font-medium">Infrastructure Complexity:</h3>
+                        </div>
+                        <p class="pl-5 text-gray-300">Each use case needed a separate infrastructure design, making management cumbersome.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-start mb-2">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <h3 class="text-orange-500 font-medium">Data store Proliferation:</h3>
+                        </div>
+                        <p class="pl-5 text-gray-300">Data was carefully fragmented between multiple data stores to solve specific problems. Sometimes a single use case required the use of multiple stores at various stages of processing creating subtle data synchronization inconsistencies that required developer attention.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-start mb-2">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <h3 class="text-orange-500 font-medium">Increasing Costs:</h3>
+                        </div>
+                        <p class="pl-5 text-gray-300">As the number of use cases grew, the cost of maintaining and scaling infrastructure increased significantly.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-start mb-2">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <h3 class="text-orange-500 font-medium">Manual Scaling Burden:</h3>
+                        </div>
+                        <p class="pl-5 text-gray-300">Human intervention was required to manage and scale clusters, leading to operational inefficiencies.</p>
+                    </div>
                 </div>
-                
-                <div>
-                  <div class="flex items-start mb-2">
-                    <span class="text-orange-500 mr-2">•</span>
-                    <h3 class="text-orange-500 font-medium">Increasing Costs:</h3>
-                  </div>
-                  <p class="pl-5 text-gray-300">As the number of use cases grew, the cost of maintaining and scaling infrastructure increased significantly.</p>
-                </div>
-                
-                <div>
-                  <div class="flex items-start mb-2">
-                    <span class="text-orange-500 mr-2">•</span>
-                    <h3 class="text-orange-500 font-medium">Manual Scaling Burden:</h3>
-                  </div>
-                  <p class="pl-5 text-gray-300">Human intervention was required to manage and scale clusters, leading to operational inefficiencies.</p>
-                </div>
-              </div>
             </div>
             <section class="relative overflow-hidden py-10 m-10 bg-gradient-to-t from-orange-500 to-orange-1100 rounded-lg">
                 <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/2 to-orange-800"></div>
@@ -321,7 +321,7 @@
                       
                 </div>
             </section>
-          </div>
+        </div>
       
           <!-- Third Column - Basic Card -->
           <div class="w-1.2/4 p-6">
