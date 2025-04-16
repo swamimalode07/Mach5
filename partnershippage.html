@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mach5 - Integrated Search and Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF4B26',
+                        dark: '#212121',
+                        'dark-800': '#1A1A1A',
+                        'dark-700': '#262626',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(var(--tw-gradient-stops))',
+                    },
+                    fontFamily: {
+                    grotesk: ['"Space Grotesk"', 'sans-serif'],
+                  },
+                }
+            }
+        }
+    </script>
+     <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
+    </script>
+    <style>
+        .bg-mesh {
+            background-image: 
+                radial-gradient(at 20% 0%, rgba(255, 75, 38, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(255, 75, 38, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(255, 75, 38, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 50%, rgba(255, 75, 38, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(255, 75, 38, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, rgba(255, 75, 38, 0.1) 0px, transparent 50%);
+        }
+        .nav-blur {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+      
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+    </style>
+</head>
+<body class="bg-dark text-white overflow-x-auto">
+  <!-- navbar -->
+ <nav class="fixed w-full z-50 bg-dark border-none backdrop-blur-sm bg-opacity-70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div class="flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2">
+              <img src="https://imgs.search.brave.com/U8Gh_WPXBSBPpRiVrtuK9QXFM-xkMeNFd7DKOFWO1fQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vcGVu/c2VhcmNoLm9yZy9h/c3NldHMvbWVkaWEv/cGFydG5lcnMvbWFj/aDUvbWFjaDUtbG9n/by5wbmc"
+                   alt="Mach5 Logo" class="w-8 h-8 object-contain" />
+              <span class="text-2xl text-white font-bold tracking-tight">Mach5</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+              <!-- Product Dropdown -->
+              <div class="relative group">
+                <button class="flex items-center text-white hover:text-gray-400 text-sm font-medium">
+                  Product
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="absolute hidden group-hover:block pt-2 w-48">
+                  <div class="bg-dark rounded-b-md shadow-lg py-1">
+                    <a href="#" class="block px-4 py-2 text-sm text-white  hover:text-gray-400 border-b border-gray-600 m-2">Product Overview</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-white  hover:text-gray-400 border-b border-gray-600 m-2">Solution</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-white  hover:text-gray-400 border-b border-gray-600 m-2">Product Pricing</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-white  hover:text-gray-400 m-2">Integration</a>
+
+                </div>
+                </div>
+              </div>
+              
+              <!-- Company Dropdown -->
+              <div class="relative group">
+                <button class="flex items-center text-white hover:text-gray-400 text-sm font-medium">
+                  Company
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="absolute hidden group-hover:block pt-2 w-48">
+                  <div class="bg-dark rounded-b-md shadow-lg py-1">
+                    <a href="about.html" class="block px-4 py-2 text-sm text-white  hover:text-gray-400 border-b border-gray-600 m-2">About Us</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-white  hover:text-gray-400 border-b border-gray-600 m-2">Careers</a>
+                    <a href="contactus.html" class="block px-4 py-2 text-sm text-white  hover:text-gray-400 m-2">Contact</a>
+                  </div>
+                </div>
+              </div>
+              
+              <a href="#" class="text-white  hover:text-gray-400 text-sm font-medium ">Documentation</a>
+              <a href="resourcespage.html" class="text-white hover:text-gray-400  text-sm font-medium">Resources</a>
+              <a href="#" class="text-white hover:text-gray-400 text-sm font-medium">Pricing</a>
+            </div>
+      
+            <div class="hidden md:block">
+              <button class="bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200">
+                Get started for free
+              </button>
+            </div>
+      
+            <div class="md:hidden">
+              <button onclick="toggleMenu()" class="text-gray-400 hover:text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+      
+          <!-- Mobile Menu -->
+          <div id="mobile-menu" class="md:hidden mt-4 space-y-4 hidden">
+            <!-- Product Mobile Dropdown -->
+            <div>
+              <button onclick="toggleDropdown('product-dropdown')" class="flex items-center w-full text-white hover:text-gray-300 text-sm font-medium">
+                Product
+                <svg id="product-arrow" class="w-4 h-4 ml-1 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div id="product-dropdown" class="hidden pl-4 mt-2 space-y-2">
+                <a href="#" class="block  text-white hover:text-gray-300 text-sm">Product Overview</a>
+                <a href="#" class="block text-white hover:text-gray-300 text-sm">Solution</a>
+                <a href="#" class="block text-white hover:text-gray-300 text-sm">Product Pricing</a>
+              </div>
+            </div>
+            
+            <!-- Company Mobile Dropdown -->
+            <div>
+              <button onclick="toggleDropdown('company-dropdown')" class="flex items-center w-full text-white hover:text-gray-300 text-sm font-medium">
+                Company
+                <svg id="company-arrow" class="w-4 h-4 ml-1 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div id="company-dropdown" class="hidden pl-4 mt-2 space-y-2">
+                <a href="about.html" class="block text-white hover:text-gray-300 text-sm">About Us</a>
+                <a href="#" class="block text-white hover:text-gray-300 text-sm">Careers</a>
+                <a href="contactus.html" class="block text-white hover:text-gray-300 text-sm">Contact</a>
+              </div>
+            </div>
+            
+            <a href="#" class="block text-white hover:text-gray-300 text-sm font-medium">Documentation</a>
+            <a href="resourcespage.html" class="block text-white hover:text-gray-300 text-sm font-medium">Resources</a>
+            <a href="#" class="block text-white hover:text-gray-300 text-sm font-medium">Pricing</a>
+            <button class="w-full bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200 shadow-md shadow-orange-600/20">
+              Get started for free
+            </button>
+          </div>
+        </div>
+      </nav>
+      
+      <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+          const menu = document.getElementById('mobile-menu');
+          menu.classList.toggle('hidden');
+        }
+        
+        // Toggle dropdowns in mobile menu
+        function toggleDropdown(id) {
+          const dropdown = document.getElementById(id);
+          const arrow = document.getElementById(id.replace('dropdown', 'arrow'));
+          
+          dropdown.classList.toggle('hidden');
+          arrow.classList.toggle('rotate-180');
+        }
+      </script>
+
+<!-- Partner Section with padding-top to account for fixed navbar -->
+<section class="relative bg-[linear-gradient(to_top,_#FF5C1B_20%,_#222222_80%)] pt-32 pb-12 md:pt-36 md:pb-16 lg:pt-30 lg:pb-10 px-4 md:px-8 lg:px-16">
+  <div class="max-w-6xl mx-auto">
+    <!-- Content Container -->
+    <div class="flex flex-col items-start space-y-6 md:space-y-8">
+      <!-- Heading -->
+      <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold">Partner with Mach5</h2>
+      
+      <!-- Description -->
+      <p class="text-white/90 text-sm md:text-base lg:text-lg max-w-6xl">
+        Our partners work together with Mach5 Software to build and deliver innovative solutions for customers. Join the Mach5 Partner Program and get access to exclusive tools, training, Solution Accelerators and go-to-market programs.
+      </p>
+      
+      <!-- Button -->
+      <button class="relative bg-[#222222] text-white text-xs py-4 lg:py-4 lg:px-6 sm:py-[13px] px-4 sm:px-[16px] transition-all duration-200 overflow-hidden group" style="border-radius: 10px">
+        <!-- Gradient border background -->
+        <span class="absolute inset-0 p-[1px]" style="border-radius: 10px">
+          <span class="absolute inset-0 bg-gradient-to-b from-[#5B5B5B] to-[#3F3F3F]" style="border-radius: 9px"></span>
+        </span>
+        <!-- Background overlay with hover effect -->
+        <span class="absolute inset-0 bg-[#2F3033] group-hover:bg-[#2a2a2a] transition-all duration-200 m-[1px]" style="border-radius: 9px"></span>
+        <!-- Button text -->
+        <span class="relative z-10 text-[14px] text-[#FEFEFE] font-semibold whitespace-nowrap">Become a Partner</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- three cards section -->
+<section class="py-12 px-4 md:px-8 max-w-6xl mx-auto">
+
+    <div class="flex overflow-x-auto md:overflow-x-visible pb-6 md:pb-0 -mx-4 px-4 md:px-0 md:flex-wrap md:justify-center gap-6 scrollbar-hide">
+      
+   
+      <div class="min-w-[350px] w-[280px] flex-shrink-0 md:flex-shrink md:w-auto md:max-w-sm bg-[#2F3033] rounded-lg overflow-hidden shadow-lg border-2 border-gray-700">
+        <div class="p-6">
+          <!-- Centered gray box -->
+          <div class="flex justify-center">
+            <div class="w-28 h-28 bg-gray-400 rounded-lg mb-4"></div>
+          </div>
+          
+          <h3 class="text-xl font-semibold mb-3 text-center">Co-marketing</h3>
+          <div class="space-y-2 text-center">
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Integrations Card -->
+      <div class="min-w-[350px] w-[280px] flex-shrink-0 md:flex-shrink md:w-auto md:max-w-sm bg-[#2F3033] rounded-lg overflow-hidden shadow-lg border-2 border-gray-700">
+        <div class="p-6">
+          <div class="flex justify-center">
+            <div class="w-28 h-28 bg-gray-400 rounded-lg mb-4"></div>
+          </div>
+          
+          <h3 class="text-xl font-semibold mb-3 text-center">Integrations</h3>
+          <div class="space-y-2 text-center">
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Investors Card -->
+      <div class="min-w-[340px] w-[280px] flex-shrink-0 md:flex-shrink md:w-auto md:max-w-sm bg-[#2F3033] rounded-lg overflow-hidden shadow-lg border-2 border-gray-700">
+        <div class="p-6">
+          <div class="flex justify-center">
+            <div class="w-28 h-28 bg-gray-400 rounded-lg mb-4"></div>
+          </div>
+          
+          <h3 class="text-xl font-semibold mb-3 text-center">Investors</h3>
+          <div class="space-y-2 text-center">
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+            <p class="text-gray-300">Lorem Ipsum</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="flex justify-center mt-4 gap-2 md:hidden">
+      <span class="h-2 w-2 rounded-full bg-primary dot-indicator"></span>
+      <span class="h-2 w-2 rounded-full bg-gray-600 dot-indicator"></span>
+      <span class="h-2 w-2 rounded-full bg-gray-600 dot-indicator"></span>
+    </div>
+</section>
+
+
+
+<section class="bg-[#222222] py-8 sm:py-12 md:py-16 font-grotesk">
+    <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+       
+        
+        <div class="flex flex-col lg:flex-row gap-6 md:gap-10 lg:gap-16 xl:gap-20">
+   
+            <div class="lg:w-1/2 space-y-4 sm:space-y-6">
+                <h2 class="text-2xl xs:text-3xl sm:text-4xl font-bold font-grotesk text-left mb-2 sm:mb-10 md:mb-12">Become a Partner</h2>
+                <div class="space-y-3 sm:space-y-4">
+                    <p class="text-white text-sm xs:text-base sm:text-[15px] leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at ipsum sit amet dolor luctus congue. Nam feugiat urna est, id vehicula nulla elementum in. Aenean finibus sit amet ex eu vulputate. Aliquam viverra efficitur ipsum nec scelerisque. 
+                    </p>
+                    <h2 class="font-extrabold text-xl">Got another idea in mind?</h2>
+                    <p class="text-white text-sm xs:text-base sm:text-[15px] leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at ipsum sit amet dolor luctus congue. Nam feugiat urna est, id vehicula nulla elementum in.
+                    </p>
+                </div>
+                
+                <!-- Partner Logos -->
+                <div class="pt-2 sm:pt-4">
+                    <h3 class="text-white text-sm font-medium mb-3 sm:mb-4">Our Trusted Partners:</h3>
+                    <div class="grid grid-cols-2 gap-3 xs:gap-4 sm:gap-5">
+                        <div class="flex items-center justify-center sm:justify-start h-10">
+                            <img src="assets/images/partners/permiso.png" alt="Permiso" 
+                                 class="max-h-6 xs:max-h-7 sm:max-h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-200" />
+                        </div>
+                        <div class="flex items-center justify-center sm:justify-start h-10">
+                            <img src="assets/images/partners/databricks.png" alt="Databricks" 
+                                 class="max-h-6 xs:max-h-7 sm:max-h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-200" />
+                        </div>
+                        <div class="flex items-center justify-center sm:justify-start h-10">
+                            <img src="assets/images/partners/snowflake.png" alt="Snowflake" 
+                                 class="max-h-6 xs:max-h-7 sm:max-h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-200" />
+                        </div>
+                        <div class="flex items-center justify-center sm:justify-start h-10">
+                            <img src="assets/images/partners/Googlecloud.png" alt="Google Cloud" 
+                                 class="max-h-6 xs:max-h-7 sm:max-h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-200" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column - Contact Form -->
+            <div class="lg:w-1/2 bg-[#2F3033] p-4 sm:p-5 md:p-6 rounded-lg shadow-lg">
+               
+                
+                <form class="space-y-3 sm:space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                        <div class="space-y-1">
+                            <label class="block text-xs xs:text-sm font-bold font-grotesk text-white/90">First Name*</label>
+                            <input type="text" 
+                                   class="w-full p-2 text-xs xs:text-sm bg-[#222222] border border-[#3e3e3e] rounded-md text-white placeholder-white/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
+                                   placeholder="Enter your first name here" required>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="block text-xs xs:text-sm font-bold font-grotesk text-white/90">Last Name*</label>
+                            <input type="text" 
+                                   class="w-full p-2 text-xs xs:text-sm bg-[#222222] border border-[#3e3e3e] rounded-md text-white placeholder-white/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
+                                   placeholder="Enter your last name here" required>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-1">
+                        <label class="block text-xs xs:text-sm font-bold font-grotesk text-white/90">Work Email*</label>
+                        <input type="email" 
+                               class="w-full p-2 text-xs xs:text-sm bg-[#222222] border border-[#3e3e3e] rounded-md text-white placeholder-white/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
+                               placeholder="Enter your work email" required>
+                    </div>
+                    
+                    <div class="space-y-1">
+                        <label class="block text-xs xs:text-sm font-bold font-grotesk text-white/90">Contact LinkedIn URL</label>
+                        <input type="text" 
+                               class="w-full p-2 text-xs xs:text-sm bg-[#222222] border border-[#3e3e3e] rounded-md text-white placeholder-white/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
+                               placeholder="Enter your contact LinkedIn URL" required>
+                    </div>
+                    <div class="space-y-1 relative">
+                        <label class="block text-xs xs:text-sm font-bold font-grotesk text-white/90">What type of partnership do you have in mind?</label>
+                        <div class="relative">
+                            <select class="w-full p-2 pr-8 text-xs xs:text-sm bg-[#222222] border border-[#3e3e3e] rounded-md text-white appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none transition" required>
+                                <option value="" disabled selected>Please select</option>
+                                <option value="option1">Option 1</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                                <!--Add more options if needed-->
+                            </select>
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                                <svg class="h-4 w-4 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-1">
+                        <label class="block text-xs xs:text-sm font-bold font-grotesk text-white/90">Leave additional notes</label>
+                        <textarea 
+                            class="w-full p-2 text-xs xs:text-sm bg-[#222222] border border-[#3e3e3e] rounded-md text-white placeholder-white/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition min-h-[100px] sm:min-h-[120px]"
+                            placeholder="Let us know if you have anything in mind" required></textarea>
+                    </div>
+                
+                   
+                    
+                    <button type="submit" 
+                            class="w-full bg-primary hover:bg-orange-600 text-white font-medium py-3 px-4 rounded-md text-sm xs:text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-[#2F3033]">
+                        Become a partner
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <!-- footer -->
+  <section class="bg-dark text-white py-8 px-4 sm:px-6 md:px-10 border-t-2 mx-4 sm:mx-6 md:mx-12">
+    <div class="max-w-screen-xl mx-auto">
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-6 md:gap-8 text-sm">
+        <div class="md:col-span-1">
+          <img src="https://imgs.search.brave.com/U8Gh_WPXBSBPpRiVrtuK9QXFM-xkMeNFd7DKOFWO1fQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vcGVu/c2VhcmNoLm9yZy9h/c3NldHMvbWVkaWEv/cGFydG5lcnMvbWFj/aDUvbWFjaDUtbG9n/by5wbmc" alt="Mach5 Logo" class="h-6 sm:h-8 mb-2 sm:mb-4">
+          <h2 class="text-base sm:text-lg font-bold mb-1 sm:mb-2">Integrated Search and Analytics</h2>
+          <p class="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-4">Transforming data search and analytics</p>
+          <a href="#" class="bg-orange-600 hover:bg-orange-700 text-white text-xs sm:text-sm px-3 py-1.5 rounded inline-flex items-center">
+            Try it for free
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+
+        <div>
+          <h3 class="text-gray-500 font-medium mb-2">Platform</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="text-gray-300 hover:text-white">Why Mach5 Search?</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Product updates</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Search platforms</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">How we compare</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Status</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Security</a></li>
+          </ul>
+        </div>
+  
+
+        <div>
+          <h3 class="text-gray-500 font-medium mb-2">Resources</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="text-gray-300 hover:text-white">Docs</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">User stories</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Blog</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Glossary</a></li>
+            <li><a href="casestudies.html" class="text-gray-300 hover:text-white">Use cases</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-gray-500 font-medium mb-2">Industries</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="text-gray-300 hover:text-white">Security firms</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Financial services</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Healthcare</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Fraud detection services</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <h3 class="text-gray-500 font-medium mb-2">Company</h3>
+          <ul class="space-y-1">
+            <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Leadership</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Roadmap</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <h3 class="text-gray-500 font-medium mb-2">Help</h3>
+          <ul class="space-y-1">
+            <li><a href="contactus.html" class="text-gray-300 hover:text-white">Contact us</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Help center</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Talk to sales</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-4 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm">
+        <div class="text-gray-500 mb-2 sm:mb-0 text-center sm:text-left">
+          © 2025 Mach5. All rights reserved.
+          <span class="mx-1">|</span>
+          <a href="#" class="hover:text-white">Privacy policy</a>
+          <span class="mx-1">|</span>
+          <a href="#" class="hover:text-white">Terms & conditions</a>
+        </div>
+  
+        <div class="flex space-x-3 mt-2 sm:mt-0">
+    
+          <a href="#" class="text-orange-600 hover:text-orange-700">
+            <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-orange-600 hover:text-orange-700">
+            <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-orange-600 hover:text-orange-700">
+            <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.getElementById('carousel');
+      const dots = document.querySelectorAll('#dots-container span');
+      
+      function updateActiveDot() {
+        if (window.innerWidth < 1024) {
+          const scrollPosition = carousel.scrollLeft;
+          const cardWidth = carousel.querySelector('[data-index]').offsetWidth;
+          const scrollIndex = Math.round(scrollPosition / cardWidth);
+          
+          dots.forEach((dot, index) => {
+            if (index === scrollIndex) {
+              dot.classList.remove('bg-gray-600');
+              dot.classList.add('bg-orange-500');
+            } else {
+              dot.classList.remove('bg-orange-500');
+              dot.classList.add('bg-gray-600');
+            }
+          });
+        }
+      }
+      
+      carousel.addEventListener('scroll', updateActiveDot);
+      window.addEventListener('resize', updateActiveDot);
+      
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+          const cardWidth = carousel.querySelector('[data-index]').offsetWidth;
+          carousel.scrollTo({
+            left: index * cardWidth,
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+    </script>
+
+
+</body>
+</html>
