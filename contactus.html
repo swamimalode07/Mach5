@@ -90,7 +90,7 @@
             </div>
       
             <div class="hidden md:block">
-              <button class="bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200 shadow-lg shadow-blue-600/20">
+              <button class="bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200 ">
                 Get started for free
               </button>
             </div>
@@ -164,7 +164,7 @@
       </script>
     <!-- Hero Section with Contact Us -->
     <section class="relative bg-[linear-gradient(to_top,_#FF5C1B_30%,_#222222_90%)] py-8 sm:py-12 lg:py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-28">
             <h1 class="text-4xl xs:text-5xl sm:text-6xl font-bold text-center mb-8 sm:mb-10 lg:mb-12 mt-12 sm:mt-16 lg:mt-20">Contact us</h1>
             
             <div class="flex justify-center">
@@ -531,29 +531,6 @@
             </div>
           </section>
 
-    <script>
-        // Simple FAQ toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.cursor-pointer');
-            faqItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const content = this.nextElementSibling;
-                    const icon = this.querySelector('i');
-                    
-                    if (content && content.classList.contains('pt-4')) {
-                        // Close the FAQ
-                        content.classList.add('hidden');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-chevron-down');
-                    } else if (content) {
-                        // Open the FAQ
-                        content.classList.remove('hidden');
-                        icon.classList.remove('fa-chevron-down');
-                        icon.classList.add('fa-times');
-                    }
-                });
-            });
-        });
-    </script>
+    
 </body>
 </html>
