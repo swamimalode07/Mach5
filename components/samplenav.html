@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mach5 - Integrated Search and Analytics</title>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./dist/output.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#FF4B26',
+                            dark: '#212121',
+                            'dark-800': '#1A1A1A',
+                            'dark-700': '#262626',
+                        },
+                        backgroundImage: {
+                            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                            'gradient-conic': 'conic-gradient(var(--tw-gradient-stops))',
+                        },
+                        fontFamily: {
+                        grotesk: ['"Space Grotesk"', 'sans-serif'],
+                      },
+                    }
+                }
+            }
+        </script>
+         <script>
+          function toggleMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
+          }
+        </script>
+        <style>
+            .bg-mesh {
+                background-image: 
+                    radial-gradient(at 20% 0%, rgba(255, 75, 38, 0.15) 0px, transparent 50%),
+                    radial-gradient(at 80% 0%, rgba(255, 75, 38, 0.1) 0px, transparent 50%),
+                    radial-gradient(at 0% 50%, rgba(255, 75, 38, 0.15) 0px, transparent 50%),
+                    radial-gradient(at 100% 50%, rgba(255, 75, 38, 0.1) 0px, transparent 50%),
+                    radial-gradient(at 0% 100%, rgba(255, 75, 38, 0.15) 0px, transparent 50%),
+                    radial-gradient(at 80% 100%, rgba(255, 75, 38, 0.1) 0px, transparent 50%);
+            }
+            .nav-blur {
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+            }
+            /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+        </style>
+        
+    <style>
+        .overflow-y-auto::-webkit-scrollbar {
+          display: none;
+        }
+      </style>
+    </head>
+<body class="bg-dark">
+    <nav class="fixed w-full z-50 bg-dark border-none backdrop-blur-sm bg-opacity-70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div class="flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2">
+              <img src="https://imgs.search.brave.com/U8Gh_WPXBSBPpRiVrtuK9QXFM-xkMeNFd7DKOFWO1fQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vcGVu/c2VhcmNoLm9yZy9h/c3NldHMvbWVkaWEv/cGFydG5lcnMvbWFj/aDUvbWFjaDUtbG9n/by5wbmc"
+                   alt="Mach5 Logo" class="w-8 h-8 object-contain" />
+              <span class="text-2xl text-white font-bold tracking-tight">Mach5</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+              <!-- Product Dropdown -->
+              <div class="relative group">
+                <button class="flex items-center text-white hover:text-gray-400 text-sm font-medium">
+                  Product
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="absolute hidden group-hover:block pt-2 left-1/2 transform -translate-x-1/2 w-[650px]">
+                  <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <!-- Two-column layout -->
+                    <div class="flex">
+                      <!-- Left column with features -->
+                      <div class="w-[280px] bg-gray-100 p-4">
+                        <!-- Feature items -->
+                        <div class="space-y-1">
+                          <div class="flex items-center p-3 hover:bg-gray-200 rounded-md cursor-pointer">
+                            <span class="text-gray-700 mr-3">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                              </svg>
+                            </span>
+                            <span class="text-gray-800 font-medium">Drag & Drop Editor</span>
+                          </div>
+                          
+                          <div class="flex items-center p-3 hover:bg-gray-200 rounded-md cursor-pointer">
+                            <span class="text-gray-700 mr-3">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                              </svg>
+                            </span>
+                            <span class="text-gray-800 font-medium">Interactive AMP Emails</span>
+                          </div>
+                          
+                          <div class="flex items-center p-3 hover:bg-gray-200 rounded-md cursor-pointer">
+                            <span class="text-gray-700 mr-3">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                              </svg>
+                            </span>
+                            <span class="text-gray-800 font-medium">Mailmodo AI for Email</span>
+                          </div>
+                          
+                          <div class="flex items-center p-3 hover:bg-gray-200 rounded-md cursor-pointer">
+                            <span class="text-gray-700 mr-3">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                              </svg>
+                            </span>
+                            <span class="text-gray-800 font-medium">Smart Segmentation</span>
+                          </div>
+                          
+                          <div class="flex items-center p-3 hover:bg-gray-200 rounded-md cursor-pointer">
+                            <span class="text-gray-700 mr-3">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                              </svg>
+                            </span>
+                            <span class="text-gray-800 font-medium">Managed Deliverability</span>
+                          </div>
+                          
+                          <div class="flex items-center p-3 hover:bg-gray-200 rounded-md cursor-pointer">
+                            <span class="text-gray-700 mr-3">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/>
+                              </svg>
+                            </span>
+                            <span class="text-gray-800 font-medium">Automated Email Journeys</span>
+                          </div>
+                          
+                          <div class="flex items-center p-3 hover:bg-gray-200 rounded-md cursor-pointer">
+                            <span class="text-gray-700 mr-3">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                              </svg>
+                            </span>
+                            <span class="text-gray-800 font-medium">Email API Services</span>
+                          </div>
+                        </div>
+                        
+                        <a href="#" class="flex items-center text-indigo-600 font-medium mt-4 text-sm">
+                          See All Features
+                          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                          </svg>
+                        </a>
+                      </div>
+                      
+                      <!-- Right column with sections -->
+                      <div class="flex-1 p-6">
+                        <!-- Use Cases Section -->
+                        <div class="mb-8">
+                          <h3 class="font-semibold text-lg text-gray-800 mb-2">Use Cases</h3>
+                          <p class="text-gray-600 text-sm">Get ideas to drive high engagement in your next campaign</p>
+                        </div>
+                        
+                        <!-- Case Study Section -->
+                        <div class="mb-8">
+                          <h3 class="font-semibold text-lg text-gray-800 mb-2">Case Study</h3>
+                          <p class="text-gray-600 text-sm">Discover how brands like you are growing with email marketing</p>
+                        </div>
+                        
+                        <!-- Integrations Section -->
+                        <div>
+                          <h3 class="font-semibold text-lg text-gray-800 mb-2">Integrations</h3>
+                          <p class="text-gray-600 text-sm mb-4">Connect Mailmodo with all your favourite platforms and tools</p>
+                          
+                          <div class="flex space-x-3">
+                            <div class="w-10 h-10 bg-white rounded border border-gray-200 flex items-center justify-center">
+                              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#444">
+                                <path d="M22 4.5c-1-1.5-2.5-2-4-2-2 0-3.5 1.3-4 2-0.5-0.7-2-2-4-2s-3 0.5-4 2c-1 1.5-1 3 0 4.5l8 11 8-11c1-1.5 1-3 0-4.5z"/>
+                              </svg>
+                            </div>
+                            <div class="w-10 h-10 bg-white rounded border border-gray-200 flex items-center justify-center">
+                              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#00a1e0">
+                                <path d="M12 3C6.5 3 2 7.5 2 13c0 3.4 1.7 6.3 4.3 8.3.5.4 1.1.7 1.7 1 1.2.5 2.5.8 4 .8 5.5 0 10-4.5 10-10S17.5 3 12 3z"/>
+                              </svg>
+                            </div>
+                            <div class="w-10 h-10 bg-white rounded border border-gray-200 flex items-center justify-center">
+                              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#95bf47">
+                                <path d="M21.5 7.5l-2 .5.5-3L13.5 4 12 7.5l-1.5-3.5-6.5.5.5 3-2-.5L4 19l4.5 1L12 13l3.5 7 4.5-1z"/>
+                              </svg>
+                            </div>
+                            <div class="w-10 h-10 bg-white rounded border border-gray-200 flex items-center justify-center">
+                              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#ff6d00">
+                                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
+                                <path d="M9 16l6-4-6-4v8z"/>
+                              </svg>
+                            </div>
+                          </div>
+                          
+                          <a href="#" class="flex items-center text-indigo-600 font-medium mt-4 text-sm">
+                            See 40+ Integrations
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Demo bar at bottom -->
+                    <div class="border-t border-gray-200 p-4 bg-gray-50 flex items-center">
+                      <svg class="w-5 h-5 text-gray-700 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.06 6.364m4.95-4.95a5 5 0 010-7.072m-2.828 9.9a9 9 0 010-12.728M12 18.012a6 6 0 100-12.024 6 6 0 000 12.024z"/>
+                      </svg>
+                      <span class="text-gray-700 mr-4">Explore how Mailmodo can help grow your business</span>
+                      <a href="#" class="flex items-center text-indigo-600 font-medium text-sm">
+                        Book a Demo
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Company Dropdown -->
+              <div class="relative group">
+                <button class="flex items-center text-white hover:text-gray-400 text-sm font-medium">
+                  Company
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="absolute hidden group-hover:block pt-2 left-0 w-48">
+                  <div class="bg-dark-700 rounded-md shadow-lg py-1 border border-gray-600">
+                    <a href="about.html" class="block px-4 py-2 text-sm text-white hover:text-gray-400 hover:bg-dark-600">About Us</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-white hover:text-gray-400 hover:bg-dark-600">Partner with us</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-white hover:text-gray-400 hover:bg-dark-600">Contact</a>
+                  </div>
+                </div>
+              </div>
+              
+              <a href="#" class="text-white hover:text-gray-400 text-sm font-medium">Documentation</a>
+              <a href="resourcespage.html" class="text-white hover:text-gray-400 text-sm font-medium">Resources</a>
+              <a href="#" class="text-white hover:text-gray-400 text-sm font-medium">Pricing</a>
+            </div>
+      
+            <div class="hidden md:block">
+              <button class="bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200 shadow-lg shadow-blue-600/20">
+                Get started for free
+              </button>
+            </div>
+      
+            <div class="md:hidden">
+              <button onclick="toggleMenu()" class="text-gray-400 hover:text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+      
+          <!-- Mobile Menu -->
+          <div id="mobile-menu" class="md:hidden mt-4 space-y-4 hidden">
+            <!-- Product Mobile Dropdown -->
+            <div>
+              <button onclick="toggleDropdown('product-dropdown')" class="flex items-center w-full text-white hover:text-gray-300 text-sm font-medium">
+                Product
+                <svg id="product-arrow" class="w-4 h-4 ml-1 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div id="product-dropdown" class="hidden pl-4 mt-2 space-y-2">
+                <a href="#" class="block text-white hover:text-gray-300 text-sm">Product Overview</a>
+                <a href="#" class="block text-white hover:text-gray-300 text-sm">Solution</a>
+                <a href="#" class="block text-white hover:text-gray-300 text-sm">Product Pricing</a>
+              </div>
+            </div>
+            
+            <!-- Company Mobile Dropdown -->
+            <div>
+              <button onclick="toggleDropdown('company-dropdown')" class="flex items-center w-full text-white hover:text-gray-300 text-sm font-medium">
+                Company
+                <svg id="company-arrow" class="w-4 h-4 ml-1 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div id="company-dropdown" class="hidden pl-4 mt-2 space-y-2">
+                <a href="about.html" class="block text-white hover:text-gray-300 text-sm">About Us</a>
+                <a href="#" class="block text-white hover:text-gray-300 text-sm">Careers</a>
+                <a href="#" class="block text-white hover:text-gray-300 text-sm">Contact</a>
+              </div>
+            </div>
+            
+            <a href="#" class="block text-white hover:text-gray-300 text-sm font-medium">Documentation</a>
+            <a href="resourcespage.html" class="block text-white hover:text-gray-300 text-sm font-medium">Resources</a>
+            <a href="#" class="block text-white hover:text-gray-300 text-sm font-medium">Pricing</a>
+            <button class="w-full bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-700 transition-all duration-200 shadow-md shadow-orange-600/20">
+              Get started for free
+            </button>
+          </div>
+        </div>
+      </nav>
+      
+      <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+          const menu = document.getElementById('mobile-menu');
+          menu.classList.toggle('hidden');
+        }
+        
+        // Toggle dropdowns in mobile menu
+        function toggleDropdown(id) {
+          const dropdown = document.getElementById(id);
+          const arrow = document.getElementById(id.replace('dropdown', 'arrow'));
+          
+          dropdown.classList.toggle('hidden');
+          arrow.classList.toggle('rotate-180');
+        }
+      </script>
+</body>
+</html>
